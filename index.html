@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Get-Inspex.com</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas  me-2">
+                    <img class="logo_img" src="assets/logo .svg" alt="">
+
+                </i>Getinspex
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Feature</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Testimonial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">FAQ</a>
+                    </li>
+                </ul>
+                <a href="#" class="btn btn-download">Download App</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="main_sect-hero position-relative overflow-hidden">
+        <!-- Background Video -->
+        <div class="main_sect-video-bg position-absolute top-0 start-0 w-100 h-100 z-n1">
+            <video autoplay loop muted playsinline class="w-100 h-100 object-fit-cover">
+                <source src="assets/white.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Circuit Lines Layer -->
+        <div class="main_sect-circuit-lines position-absolute top-0 start-0 w-100 h-100 z-0">
+            <!-- Add dynamic SVG/JS animation here if needed -->
+        </div>
+
+        <!-- Main Content -->
+        <div class="container  position-relative z-1 text-white">
+            <div class="row align-items-center min-vh-100 ">
+                <div class="col-lg-6">
+                    <h1 class="main_sect-title fw-bold">Transforming Inspections for the Future</h1>
+                    <p class="main_sect-desc lead mb-4">
+                        "Inspex is a smart, all-in-one platform designed to simplify and optimize site inspections. With
+                        features like real-time GPS tracking, digital checklists, and secure report submissions, Inspex
+                        ensures your inspections are accurate, efficient, and fully compliant. Streamline your workflow
+                        and take control of safety inspections — all from the palm of your hand."
+                    </p>
+                    <a href="#" class="main_sect-btn btn btn-primary btn-lg px-4">Download App</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Circuit Lines Background -->
+    <div class="circuit-lines">
+        <!-- These will be created with JavaScript -->
+    </div>
+    </section>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Circuit Lines Animation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const circuitLines = document.querySelector('.circuit-lines');
+
+            // Create random circuit lines
+            for (let i = 0; i < 15; i++) {
+                const line = document.createElement('div');
+                line.classList.add('circuit-line');
+
+                // Random positioning
+                const top = Math.random() * 100;
+                const width = 20 + Math.random() * 80;
+                const right = Math.random() * 100;
+
+                line.style.top = `${top}%`;
+                line.style.width = `${width}px`;
+                line.style.right = `${right}px`;
+
+                circuitLines.appendChild(line);
+            }
+        });
+    </script>
+
+    <section class="">
+        <div class="container py-5 ">
+            <h1 class="section-title">How we Digitalize the inspections</h1>
+
+            <div class="container py-5">
+                <div class="row">
+
+
+                    <!-- ───── Feature Cards ───── -->
+                    <div class="row">
+                        <!-- Protect Card -->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="feature-card shadow-lg rounded-4 p-4 bg-white position-relative overflow-hidden hover-up"
+                                tabindex="0" data-modal="#modalProtect">
+
+
+                                <h1 class="feature-text fw-bold  text-start">
+                                    Super Admin
+                                </h1>
+
+                                <ul class="text-dark ps-1">
+                                    <li class=" d-flex align-items-center ">
+                                        <i class="fas fa-cogs control-icon me-2 text-primary"></i>
+                                        <span>Full control over the entire inspection system</span>
+                                    </li>
+                                    <li class=" d-flex align-items-center">
+                                        <i class="fas fa-users-cog access-icon me-2 text-success"></i>
+                                        <span>Approve & manage access for all users</span>
+                                    </li>
+                                    <li class=" d-flex align-items-center">
+                                        <i class="fas fa-tachometer-alt dashboard-icon me-2 text-warning"></i>
+                                        <span>Monitor all job activity from dashboard</span>
+                                    </li>
+                                    <li class=" d-flex align-items-center">
+                                        <i class="fas fa-file-alt report-icon me-2 text-info"></i>
+                                        <span>Audit reports and ensure compliance</span>
+                                    </li>
+                                    <li class="mb-2 d-flex align-items-center">
+                                        <i class="fas fa-chart-line performance-icon me-2 text-danger"></i>
+                                        <span>Generate system-wide performance insights</span>
+                                    </li>
+                                    <li class="mb-2 d-flex align-items-center">
+                                        <i class="fas fa-eye oversight-icon me-2 text-secondary"></i>
+                                        <span>Oversee everything effortlessly with Inspex</span>
+                                    </li>
+                                </ul>
+
+                                <div class="card-overlay bg-light p-3 rounded-3 mt-4 text-center">
+                                    <strong class="text-primary">Need more details? Click here</strong><br>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <!-- High Speed Card -->
+                        <div class="col-lg-4 col-md-6 ">
+                            <div class="feature-card" tabindex="0" data-modal="#modalSpeed">
+
+                                <h1 class="feature-text text-start ps-3">
+                                    Technical manager
+                                </h1>
+
+
+                                <ul class="text-dark ps-1 ">
+                                    <!-- Super Admin Items -->
+
+
+                                    <li class="d-flex align-items-center">
+                                        <i class="fas fa-tachometer-alt dashboard-icon me-2 text-warning"></i>
+                                        <span>Monitor all job activity from the dashboard</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fas fa-file-alt report-icon me-2 text-info"></i>
+                                        <span>Audit reports and ensure compliance</span>
+                                    </li>
+
+                                    <li class=" d-flex align-items-center">
+                                        <i class="fas fa-eye oversight-icon me-2 text-secondary"></i>
+                                        <span>Oversee everything effortlessly with Inspex</span>
+                                    </li>
+
+                                    <!-- Simplified Technical Manager Items -->
+                                    <li class="d-flex align-items-center">
+                                        <i class="fas fa-users-cog text-success me-2"></i>
+                                        <span> Can Assign tasks to inspectors </span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fas fa-sync-alt text-primary me-2"></i>
+                                        <span>Monitor real-time task status and progress</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fas fa-file-alt text-danger me-2"></i>
+                                        <span>Review and approve inspection reports</span>
+                                    </li>
+                                </ul>
+
+
+                                <div class="card-overlay bg-light p-3 rounded-3 mt-4 text-center">
+                                    <strong class="text-primary">Need more details? Click here</strong><br>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Measure Seamlessly Card -->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="feature-card" tabindex="0" data-modal="#modalMeasure">
+
+                                <h1 class="feature-text">
+                                    Inspector
+                                </h1>
+
+                                <ul class="text-dark ps-1">
+                                    <li class="mb-2 d-flex align-items-center">
+                                        <i class="fas fa-eye oversight-icon me-2 text-secondary"></i>
+                                        <span>Oversee everything effortlessly with Inspex</span>
+                                    </li>
+                                    <!-- Inspector Items -->
+                                    <li class="d-flex align-items-center">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        <span>Receive tasks with clear instructions</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fas fa-map-marker-alt text-warning me-2"></i>
+                                        <span>Check-in at the inspection site via GPS</span>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="fas fa-clipboard-list text-info me-2"></i>
+                                        <span>Complete digital checklists with ease</span>
+                                    </li>
+                                    <li class="mb-2 d-flex align-items-center">
+                                        <i class="fas fa-camera text-primary me-2"></i>
+                                        <span>Capture photos and documents for inspection</span>
+                                    </li>
+                                    <li class="mb-2 d-flex align-items-center">
+                                        <i class="fas fa-signature text-secondary me-2"></i>
+                                        <span>Sign and submit reports in one tap</span>
+                                    </li>
+                                </ul>
+
+                                <!-- Hover effect to reveal "See Details" -->
+
+                                <div class="card-overlay bg-light p-3 rounded-3 mt-4 text-center">
+                                    <strong class="text-primary">Need more details? Click here </strong><br>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- ───── Modals ───── -->
+                    <!-- Protect Modal -->
+                    <div class="modal fade" id="modalProtect" tabindex="-1" aria-labelledby="modalProtectLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-xl ">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalProtectLabel">Super admin Details</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+
+
+
+                                    <div class="inside_con-container">
+                                        <section class="inside_con-ideation-section">
+                                            <div class="inside_con-content">
+                                                <h1 class="inside_con-heading">Super Admin: Full Control and Management
+                                                </h1>
+                                                <p class="inside_con-description">
+                                                    As a <strong>Super Admin</strong>, you hold the ultimate
+                                                    responsibility for overseeing all aspects of the inspection system.
+                                                    From user management to task monitoring, your role ensures that the
+                                                    inspection process runs smoothly, efficiently, and securely.
+                                                </p>
+
+                                                <div class="inside_con-steps">
+                                                    <div class="inside_con-step row">
+
+                                                        <div class="inside_con-step-text">Manage User Access</div>
+                                                        <p class="text_para">You have the authority to approve or
+                                                            revoke access for all
+                                                            users in the system, including <em>technical managers</em>,
+                                                            <em>inspectors</em>, and other admin-level users. By
+                                                            ensuring only authorized personnel have access to sensitive
+                                                            data, you maintain security and compliance.
+                                                        </p>
+                                                    </div>
+                                                    <div class="inside_con-step row">
+
+                                                        <div class="inside_con-step-text">Monitor Job Activity</div>
+                                                        <p class="text_para">Keep a close eye on all ongoing
+                                                            inspections. View live
+                                                            updates on job assignments, inspector status, and task
+                                                            progress. This ensures that inspections are being completed
+                                                            on time and according to the highest standards.</p>
+                                                    </div>
+                                                    <div class="inside_con-step row">
+
+                                                        <div class="inside_con-step-text">Audit and Approve Reports
+                                                        </div>
+                                                        <p>Review and approve inspection reports before they are
+                                                            submitted. Ensure that all reports meet compliance standards
+                                                            and that data integrity is maintained throughout the
+                                                            process.</p>
+                                                    </div>
+                                                    <div class="inside_con-step row">
+
+                                                        <div class="inside_con-step-text">Generate Performance Insights
+                                                        </div>
+                                                        <p>Gain valuable insights from detailed performance reports.
+                                                            Monitor the productivity of your team, track the efficiency
+                                                            of inspections, and improve the process over time.</p>
+                                                    </div>
+                                                    <div class="inside_con-step row">
+
+                                                        <div class="inside_con-step-text">Ensure System Security
+                                                        </div>
+                                                        <p>Monitor system security by tracking user actions and ensuring
+                                                            compliance with data protection regulations. Perform regular
+                                                            audits to maintain data integrity and prevent unauthorized
+                                                            access</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="inside_con-visual">
+                                                <div class="inside_con-video-container">
+                                                    <!-- Replace the icons with a video -->
+                                                    <video class="inside_con-video" autoplay loop muted playsinline>
+                                                        <source src="assets/Super_admin.mp4" type="video/mp4">
+                                                        Your browser does not support the video tag.
+                                                    </video>
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </section>
+
+
+                                    </div>
+
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button class="btn btn-primary">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- High Speed Modal -->
+                    <div class="modal fade" id="modalSpeed" tabindex="-1" aria-labelledby="modalSpeedLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-xl">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalSpeedLabel">High Speed Details</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <ul>
+                                        <li>Global median latency &lt; 25 ms</li>
+                                        <li>Optimized routing for peak performance</li>
+                                        <li>99.99 % uptime SLA</li>
+                                    </ul>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button class="btn btn-primary">View Speed Map</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Measure Seamlessly Modal -->
+                    <div class="modal fade" id="modalMeasure" tabindex="-1" aria-labelledby="modalMeasureLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-xl">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalMeasureLabel">Measure Seamlessly Details</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>
+                                        Our tools eliminate data blind spots:
+                                    </p>
+                                    <ul>
+                                        <li>Real-time dashboards</li>
+                                        <li>Instant alerts</li>
+                                        <li>CSV export with one click</li>
+                                    </ul>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button class="btn btn-primary">Explore Dashboard</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ───── JS to bind all cards ───── -->
+                    <script>
+                        document.addEventListener('DOMContentLoaded', () => {
+                            document
+                                .querySelectorAll('.feature-card[data-modal]')
+                                .forEach(card => {
+                                    card.addEventListener('click', () => {
+                                        const target = card.getAttribute('data-modal');
+                                        const modalEl = document.querySelector(target);
+                                        if (modalEl) new bootstrap.Modal(modalEl).show();
+                                    });
+                                });
+                        });
+                    </script>
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </section>
+    <!--One click Accesability Control system-->
+    <section>
+        <div class="circuit">
+            <div class="container">
+                <div class="row hero-section align-items-center">
+                    <div class="col-lg-6">
+                        <h1 class="hero-title">Gps Inetegrated system </h1>
+                        <p class="hero-text">
+                            Our GPS-integrated system ensures seamless task assignment and accurate tracking for
+                            inspectors. With real-time GPS check-ins, Inspex allows you to confirm on-site presence and
+                            monitor task progress without any delays. The system automatically logs the location of each
+                            inspection, ensuring compliance and accountability at every step.
+                        </p>
+
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-location-arrow"></i> <!-- GPS Icon -->
+                                </div>
+                                <div>Track inspector location and task status in real-time.</div>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-cloud-upload-alt"></i> <!-- Offline Icon -->
+                                </div>
+                                <div>Inspectors can work offline, syncing once online.</div>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-lock"></i> <!-- Encryption Icon -->
+                                </div>
+                                <div>All inspection data is securely encrypted.</div>
+                            </div>
+                        </div>
+
+
+                        <button class="btn download-btn">Download App</button>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="phone-mockup">
+                            <video autoplay loop muted playsinline>
+                                <source src="assets/gps.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+    <section class="contact-section py-5" data-aos="fade-up">
+        <div class="container py-4">
+            <div class="row text-center mb-5" data-aos="zoom-in">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class=" heading_grow contact-display-4 fw-bold">Let's Grow Your Business – Talk to Us!</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
+                    <h3 class="contact-heading mb-4">Contact us</h3>
+
+                    <div class="contact-item d-flex align-items-center mb-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h4 class="contact-info-title">Call us</h4>
+                            <p class="contact-info-detail">+44 325 5687 35</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item d-flex align-items-center mb-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h4 class="contact-info-title">Email</h4>
+                            <p class="contact-info-detail">marketo@info.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h4 class="contact-info-title">Based in</h4>
+                            <p class="contact-info-detail mb-0">4140 Parker Rd. Allentown,</p>
+                            <p class="contact-info-detail">New Mexico</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="contact-form-container">
+                        <form id="contactForm">
+                            <h3 class="contact-form-heading mb-4">Get in touch</h3>
+
+                            <div class="mb-3">
+                                <label for="fullName" class="contact-form-label">Full Name*</label>
+                                <input type="text" class="contact-form-control form-control" id="fullName"
+                                    placeholder="Jacob" required />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="contact-form-label">Email Address*</label>
+                                <input type="email" class="contact-form-control form-control" id="email"
+                                    placeholder="example@email.com" required />
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="message" class="contact-form-label">Message*</label>
+                                <textarea class="contact-form-control form-control" id="message" rows="5"
+                                    placeholder="Message" required></textarea>
+                            </div>
+
+                            <div class="mb-4 form-check contact-form-check">
+                                <input type="checkbox" class="contact-form-check-input form-check-input"
+                                    id="privacyPolicy" required />
+                                <label class="contact-form-check-label form-check-label" for="privacyPolicy">
+                                    I have read and accepted the <a href="#" class="contact-privacy-link">Privacy
+                                        Policy</a>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn_submit contact-btn-submit">Submit Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- FAQ Section -->
+    <section class="faq-section py-5" data-aos="fade-up">
+        <div class="container py-4">
+            <div class="row">
+                <!-- Left Column -->
+                <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-up">
+                    <div class="faq-header">
+                        <h2 class="faq-title mb-4">Answers to Your Top Questions</h2>
+                        <p class="faq-description">
+                            Check out our frequently asked questions to learn more about our process, services, and
+                            what
+                            to expect.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="col-lg-7" data-aos="fade-up">
+                    <div class="accordion" id="faqAccordion">
+                        <!-- FAQ Item 1 -->
+                        <div class="accordion-item" data-aos="fade-up">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    What services do you offer?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We offer a full range of digital marketing, development, and branding services
+                                    to
+                                    help grow your business online.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 2 -->
+                        <div class="accordion-item" data-aos="fade-up">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    How can I get started?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Simply reach out through our contact form or call us directly. We'll guide you
+                                    through every step.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 3 -->
+                        <div class="accordion-item" data-aos="fade-up">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Do you work with international clients?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, we proudly work with clients from around the globe to deliver top-tier
+                                    digital
+                                    solutions.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 4 -->
+                        <div class="accordion-item" data-aos="fade-up">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    What is your pricing structure?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our pricing depends on your specific needs and goals. We provide custom quotes
+                                    after
+                                    a free consultation.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 5 -->
+                        <div class="accordion-item" data-aos="fade-up">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    How long does a project usually take?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Project duration depends on scope, but we strive to deliver efficiently without
+                                    compromising quality.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Custom script to change icons when accordion items are toggled
+        document.querySelectorAll('.accordion-button').forEach(button => {
+            button.addEventListener('click', function () {
+                const icon = this.querySelector('.custom-icon i');
+                if (this.classList.contains('collapsed')) {
+                    icon.classList.replace('bi-plus', 'bi-dash');
+                } else {
+                    icon.classList.replace('bi-dash', 'bi-plus');
+                }
+            });
+        });
+    </script>
+    <!-- Footer Section -->
+    <footer class="footer-section bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <!-- About Us Column -->
+                <div class="col-md-4">
+                    <h5>About Inspex</h5>
+                    <p>Inspex is a cutting-edge inspection management app that helps you perform, track, and manage
+                        safety inspections efficiently. Designed for businesses of all sizes, our app simplifies
+                        inspections, improves safety compliance, and ensures real-time performance tracking.</p>
+                </div>
+
+                <!-- Quick Links Column -->
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#about" class="text-light">About Us</a></li>
+                        <li><a href="#features" class="text-light">Features</a></li>
+                        <li><a href="#pricing" class="text-light">Pricing</a></li>
+                        <li><a href="#contact" class="text-light">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info Column -->
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>Have questions? Reach out to us:</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-phone-alt"></i> +971507857279</li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:contact@inspex.com"
+                                class="text-light">contact@inspex.com</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Shams Sharjah Media City </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="text-light">
+
+            <!-- Social Media & Legal -->
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2025 Inspex. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <a href="#" class="text-light">Privacy Policy</a> | <a href="#" class="text-light">Terms of
+                        Service</a>
+                    <div class="social-links">
+                        <a href="#" class="text-light me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    </script>
+
+</body>
+
+</html>
