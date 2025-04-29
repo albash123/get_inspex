@@ -66,6 +66,9 @@ body {
   pointer-events: none;
   /* optional animation or background SVGs can be added here */
 }
+.sect_crds {
+  background-color: #60606028;
+}
 
 .main_sect-title {
   font-size: 5rem !important;
