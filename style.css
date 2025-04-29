@@ -68,18 +68,46 @@ body {
 }
 
 .main_sect-title {
-  font-size: 2.5rem;
+  font-size: 5rem !important;
   color: var(--primary-color);
+}
+/* Mobile view: reduce font size */
+@media (max-width: 768px) {
+  .main_sect-title {
+    font-size: 30px !important; /* Adjust as needed */
+    text-align: start; /* Optional: center text on small screens */
+  }
 }
 
 .main_sect-desc {
-  font-size: 1.125rem;
+  font-size: 1.125rem !important;
+}
+/* Mobile view: reduce font size */
+@media (max-width: 768px) {
+  .main_sect-desc {
+    font-size: 12px !important; /* Adjust as needed */
+  }
+}
+.main_sect-btn {
+  background-color: var(--primary-color) !important;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.main_sect-btn {
-  background-color: #007bff;
-  border: none;
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  .main_sect-btn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    width: 100%; /* Optional: make button full width on small screens */
+  }
 }
+
 .main_sect-btn:hover {
   background-color: #0056b3;
 }
@@ -405,7 +433,7 @@ ul.text-light li {
 
 /* ========== Modal Title ========== */
 .modal-title {
-  font-size: 10px;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -419,7 +447,12 @@ ul.text-light li {
   cursor: pointer;
 }
 
-
+/* Mobile view: increase modal height */
+@media (max-width: 768px) {
+  .modal-body {
+    height: 1000px; /* Increase height for mobile */
+  }
+}
 
 /* Style lists inside body */
 .modal-body ul {
@@ -1672,11 +1705,11 @@ main {
 
 .heading_grow {
   font-size: 2.5rem;
-  color: #a7d7c5 !important;
+  color: var(--primary-color) !important;
 }
 
 .contact-icon {
-  background-color: #f8e5e5 !important;
+  background-color: var(--primary-color) !important;
 }
 
 .contact-section {
@@ -2122,8 +2155,8 @@ main {
 }
 .inside_con-video-container {
   position: relative;
-  width: 500px; /* Reduced width */
-  height: 700px; /* Reduced height */
+  width: 500px;
+  height: 700px;
   overflow: hidden;
   border-radius: 15px;
 }
@@ -2132,4 +2165,12 @@ main {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Mobile view: increase video container height */
+@media (max-width: 768px) {
+  .inside_con-video-container {
+    height: 380px; /* Or any larger value suitable for mobile */
+    width: 100%; /* Optional: make it full width on mobile */
+  }
 }
