@@ -715,24 +715,25 @@
 
                 <div class="col-lg-7" data-aos="fade-left">
                     <div class="contact-form-container">
-                        <form id="contactForm">
+                        <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+                            <input type="hidden" name="access_key" value="e7f165cc-7e95-4f36-b9f6-03c8b7cb6d3e">
                             <h3 class="contact-form-heading mb-4">Get in touch</h3>
 
                             <div class="mb-3">
                                 <label for="fullName" class="contact-form-label">Full Name*</label>
-                                <input type="text" class="contact-form-control form-control" id="fullName"
+                                <input type="text" name="name" class="contact-form-control form-control" id="fullName"
                                     placeholder="Jacob" required />
                             </div>
 
                             <div class="mb-3">
                                 <label for="email" class="contact-form-label">Email Address*</label>
-                                <input type="email" class="contact-form-control form-control" id="email"
+                                <input type="email" name="email" class="contact-form-control form-control" id="email"
                                     placeholder="example@email.com" required />
                             </div>
 
                             <div class="mb-4">
                                 <label for="message" class="contact-form-label">Message*</label>
-                                <textarea class="contact-form-control form-control" id="message" rows="5"
+                                <textarea class="contact-form-control form-control" id="message" rows="5" name="message"
                                     placeholder="Message" required></textarea>
                             </div>
 
@@ -915,7 +916,7 @@
                     <ul class="list-unstyled">
                         <li><i class="fas fa-phone-alt"></i> +971507857279</li>
                         <li><i class="fas fa-envelope"></i> <a href="mailto:contact@inspex.com"
-                                class="text-light">contact@inspex.com</a></li>
+                                class="text-light">info@getinspex.com</a></li>
                         <li><i class="fas fa-map-marker-alt"></i> Shams Sharjah Media City </li>
                     </ul>
                 </div>
