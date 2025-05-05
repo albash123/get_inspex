@@ -216,19 +216,19 @@ body {
 .feature-card {
   position: relative; /* for absolutely-positioned overlay */
   overflow: hidden;
-  padding: 2rem 1.5rem;
+  padding: 1rem 1.5rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Initial box shadow */
   background: linear-gradient(
     45deg,
-    #ffffff,
-    #fbf5e5,
-    #ecebed,
+    #d50c0c,
+    #e5d8b4,
+    #f3e7fe,
     #949494bc
   ); /* Multi-color gradient */
   background-size: 400% 400%; /* Larger gradient for smooth transition */
   animation: gradientAnimation 10s ease infinite; /* Smooth, continuous animation */
   border-radius: 15px;
-  height: 440px;
+  height: 640px;
   color: black !important;
   text-align: center;
   cursor: pointer;
@@ -317,9 +317,9 @@ ul.text-light li i {
   color: #17a2b8; /* Teal for oversight (security and monitoring) */
 }
 .feature-text {
-  font-size: 2rem;
-  font-weight: 700;
-  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-align: start !important;
   margin-bottom: 15px;
   color: var(--primary-color);
 }

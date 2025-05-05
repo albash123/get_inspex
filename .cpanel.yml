@@ -1,5 +1,0 @@
----
-version: 1        # <- this line makes it a valid spec
-deployment:
-  tasks:
-    - /bin/true   # a “do-nothing” task that always succeeds
