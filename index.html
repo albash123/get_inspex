@@ -22,8 +22,6 @@
 
 </head>
 
-
-
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg">
@@ -41,7 +39,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">hello</a>
+                        <a class="nav-link" href="#">Features</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Pricing</a>
@@ -57,7 +55,6 @@
             </div>
         </div>
     </nav>
-
 
     <!-- Hero Section -->
     <section class="main_sect-hero position-relative overflow-hidden">
@@ -90,49 +87,13 @@
             </div>
         </div>
     </section>
-
-
-
-    <!-- Circuit Lines Background -->
-    <div class="circuit-lines">
-        <!-- These will be created with JavaScript -->
-    </div>
-    </section>
-
-
-
-    <!-- Circuit Lines Animation -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const circuitLines = document.querySelector('.circuit-lines');
-
-            // Create random circuit lines
-            for (let i = 0; i < 15; i++) {
-                const line = document.createElement('div');
-                line.classList.add('circuit-line');
-
-                // Random positioning
-                const top = Math.random() * 100;
-                const width = 20 + Math.random() * 80;
-                const right = Math.random() * 100;
-
-                line.style.top = `${top}%`;
-                line.style.width = `${width}px`;
-                line.style.right = `${right}px`;
-
-                circuitLines.appendChild(line);
-            }
-        });
-    </script>
-
+    <!--How we digitalize inspections-->
     <section class="sect_crds">
         <div class="container py-5 ">
             <h1 class="section-title">How we Digitalize the inspections</h1>
 
             <div class="container py-5">
                 <div class="row">
-
-
                     <!-- ───── Feature Cards ───── -->
                     <div class="row">
                         <!-- Super Admin Feature Card -->
@@ -598,30 +559,257 @@
                         </div>
                     </div>
 
-                    <!-- ───── JS to bind all cards ───── -->
-                    <script>
-                        document.addEventListener('DOMContentLoaded', () => {
-                            document
-                                .querySelectorAll('.feature-card[data-modal]')
-                                .forEach(card => {
-                                    card.addEventListener('click', () => {
-                                        const target = card.getAttribute('data-modal');
-                                        const modalEl = document.querySelector(target);
-                                        if (modalEl) new bootstrap.Modal(modalEl).show();
-                                    });
-                                });
-                        });
-                    </script>
-
-
                 </div>
             </div>
 
 
         </div>
 
+
+
+
     </section>
-    <!--One click Accesability Control system-->
+    <!--Industry-->
+    <section class="industry-solutions py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Industry-Specific Solutions</h2>
+            <p class="text-center mb-5 text-black">No matter your industry, Getinspex is designed to help streamline
+                inspections, increase compliance, and enhance efficiency. Here’s how we can help different sectors:
+            </p>
+
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="industry-card">
+                        <h4>Construction</h4>
+                        <p>Simplify site inspections, reduce risks, and ensure compliance on job sites with
+                            real-time GPS tracking and digital checklists.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <div class="industry-card">
+                        <h4>Healthcare</h4>
+                        <p>Ensure safety and compliance for medical facilities with regular inspections, ensuring
+                            that all necessary safety protocols are met.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <div class="industry-card">
+                        <h4>Manufacturing</h4>
+                        <p>Monitor factory and equipment inspections to avoid downtime and ensure operational
+                            safety, improving production line efficiency.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <div class="industry-card">
+                        <h4>Energy & Utilities</h4>
+                        <p>Track energy equipment and infrastructure inspections to stay compliant with industry
+                            standards, ensuring safety and operational continuity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Case Studies-->
+
+    <section class="case-studies py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Client Case Studies</h2>
+            <p class="text-center mb-5">Discover how Getinspex has helped businesses improve their inspection processes.
+                Here are some success stories:</p>
+
+            <div class="row">
+                <!-- Case Study 1 -->
+                <div class="col-md-6 mb-4">
+                    <div class="case-study-card">
+                        <h4>Construction Company Efficiency Boost</h4>
+                        <p><strong>Before:</strong> Manual inspection processes, delayed task completions, and
+                            compliance issues.</p>
+                        <p><strong>After:</strong> Streamlined workflows, reduced risk, and ensured compliance with
+                            real-time GPS tracking and task management.</p>
+                        <p><strong>Results:</strong> Increased task completion speed by 30%, reduced errors by 40%, and
+                            saved $20,000 annually in operational costs.</p>
+                        <!-- Button to trigger Modal -->
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#caseStudyModal1">Read
+                            Full Case Study</button>
+                    </div>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="col-md-6 mb-4">
+                    <div class="case-study-card">
+                        <h4>Healthcare Facility Compliance & Safety</h4>
+                        <p><strong>Before:</strong> Paper-based inspections led to missed tasks and difficulty tracking
+                            compliance.</p>
+                        <p><strong>After:</strong> Fully digitalized inspections with automatic reporting and real-time
+                            updates on compliance status.</p>
+                        <p><strong>Results:</strong> 50% faster compliance tracking, reduced paperwork by 80%, and
+                            improved safety record.</p>
+                        <!-- Button to trigger Modal -->
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#caseStudyModal2">Read
+                            Full Case Study</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal for Case Study 1 (Detailed) -->
+        <div class="modal fade" id="caseStudyModal1" tabindex="-1" aria-labelledby="caseStudyModalLabel1"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="caseStudyModalLabel1">Construction Company Efficiency Boost</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body custom-modal-body">
+                        <h5>Background:</h5>
+                        <p>The construction company had been facing significant delays and inefficiencies due to their
+                            reliance on manual inspection processes. The paper-based checklists and manual task
+                            assignments caused workflow bottlenecks, leading to delayed task completions and occasional
+                            compliance issues.</p>
+
+                        <h5>Challenges Faced:</h5>
+                        <ul>
+                            <li><strong>Manual Inspection Processes:</strong> Time-consuming and prone to errors,
+                                resulting in delayed inspections and incomplete tasks.</li>
+                            <li><strong>Compliance Issues:</strong> Difficulty in tracking and ensuring compliance with
+                                safety regulations and industry standards.</li>
+                            <li><strong>Data Management:</strong> Physical paperwork created data entry errors and made
+                                it difficult to track the progress of ongoing inspections.</li>
+                            <li><strong>Limited Real-Time Insights:</strong> Lack of visibility into the status of
+                                inspections and real-time updates led to inefficiencies.</li>
+                        </ul>
+
+                        <h5>Solution Implemented:</h5>
+                        <p>Getinspex was implemented to streamline the company's inspection processes. Key features
+                            included:</p>
+                        <ul>
+                            <li><strong>Real-Time GPS Tracking:</strong> Inspectors could now track their location and
+                                check in at sites in real-time, improving task accuracy and accountability.</li>
+                            <li><strong>Task Management:</strong> Automated task assignment and task tracking, allowing
+                                for efficient allocation of inspections to the right inspectors.</li>
+                            <li><strong>Digital Checklists:</strong> Digitalized checklists replaced paper forms,
+                                reducing errors and ensuring faster data entry.</li>
+                            <li><strong>Centralized Dashboard:</strong> A comprehensive dashboard allowed management to
+                                monitor real-time task statuses and quickly assess any issues that arose.</li>
+                        </ul>
+
+                        <h5>Results and Impact:</h5>
+                        <ul>
+                            <li><strong>30% Faster Task Completion:</strong> The automation of task assignment and
+                                digital checklists resulted in a 30% increase in task completion speed.</li>
+                            <li><strong>40% Fewer Errors:</strong> The digital system reduced data entry errors by 40%,
+                                improving the accuracy of inspections.</li>
+                            <li><strong>Cost Savings:</strong> The company saved $20,000 annually in operational costs
+                                by eliminating paper-based processes and reducing inefficiencies.</li>
+                            <li><strong>Improved Compliance:</strong> Real-time monitoring and accurate data ensured
+                                compliance with safety regulations and industry standards.</li>
+                        </ul>
+
+                        <h5>Client Feedback:</h5>
+                        <p><strong>"Getinspex has revolutionized our inspection workflow. The real-time tracking and
+                                automated task management have significantly improved efficiency and compliance. We are
+                                now able to complete inspections faster and with fewer errors." - <em>David Adams,
+                                    Project Manager</em></strong></p>
+
+                        <h5>Conclusion:</h5>
+                        <p>The implementation of Getinspex led to significant operational improvements for the
+                            construction company, reducing manual tasks, improving task tracking, and ensuring
+                            compliance. This case study demonstrates how **technology** can optimize workflows and save
+                            costs in the construction industry.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Case Study 2 (Detailed) -->
+        <div class="modal fade" id="caseStudyModal2" tabindex="-1" aria-labelledby="caseStudyModalLabel2"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="caseStudyModalLabel2">Healthcare Facility Compliance & Safety</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body custom-modal-body">
+                        <h5>Background:</h5>
+                        <p>The healthcare facility had been relying on <strong>paper-based inspections</strong> for
+                            their safety and compliance checks. This led to inefficiencies, missed tasks, and challenges
+                            in tracking compliance standards across various departments. The inspection process was
+                            slow, prone to errors, and often created bottlenecks in workflow due to paperwork and manual
+                            data entry.</p>
+
+                        <h5>Challenges Faced:</h5>
+                        <ul>
+                            <li><strong>Manual Process:</strong> Paper-based forms and checklists were cumbersome and
+                                difficult to manage, resulting in lost data and incomplete reports.</li>
+                            <li><strong>Compliance Gaps:</strong> Difficulty in ensuring consistent compliance across
+                                departments, leading to occasional non-compliance with healthcare regulations.</li>
+                            <li><strong>Inaccurate Tracking:</strong> Lack of real-time insights into inspection
+                                statuses meant delays and missed deadlines.</li>
+                            <li><strong>Data Integrity Issues:</strong> Data was often transcribed incorrectly during
+                                manual entry, leading to reporting errors.</li>
+                        </ul>
+
+                        <h5>Solution Implemented:</h5>
+                        <p>After implementing <strong>Getinspex</strong>, the healthcare facility transitioned to a
+                            fully digitalized inspection process. Key features implemented included:</p>
+                        <ul>
+                            <li><strong>Real-Time GPS Tracking:</strong> Inspectors could easily track their locations
+                                and check in at inspection sites, ensuring compliance with all safety regulations.</li>
+                            <li><strong>Automated Reporting:</strong> Getinspex automated the creation and submission of
+                                inspection reports, reducing the time taken to compile data.</li>
+                            <li><strong>Task Notifications:</strong> Inspectors received automated notifications for new
+                                tasks, ensuring all inspection duties were performed on time and in order.</li>
+                            <li><strong>Centralized Dashboard:</strong> The management team could track all ongoing
+                                inspections in real-time, ensuring transparency and visibility into compliance levels
+                                across the facility.</li>
+                        </ul>
+
+                        <h5>Results and Impact:</h5>
+                        <ul>
+                            <li><strong>50% Faster Compliance Tracking:</strong> Inspection times were reduced
+                                significantly, making it easier to meet compliance deadlines.</li>
+                            <li><strong>80% Reduction in Paperwork:</strong> With digital checklists and reports, the
+                                need for physical paperwork was greatly minimized, saving time and reducing errors.</li>
+                            <li><strong>Improved Safety Record:</strong> By ensuring timely inspections and up-to-date
+                                compliance records, the facility experienced fewer incidents related to safety
+                                violations.</li>
+                            <li><strong>Cost Savings:</strong> The facility saved both time and resources on manual data
+                                entry, allowing them to redirect efforts toward improving overall operational
+                                efficiency.</li>
+                            <li><strong>Increased Reporting Accuracy:</strong> Automated reporting ensured data
+                                integrity, providing accurate and consistent inspection reports that met regulatory
+                                standards.</li>
+                        </ul>
+
+                        <h5>Client Feedback:</h5>
+                        <p><strong>"Getinspex has revolutionized the way we manage inspections. The transition to
+                                digital was seamless, and the real-time tracking and reporting features have helped us
+                                improve compliance and efficiency throughout our facility." - <em>Sarah Lee, Compliance
+                                    Manager</em></strong></p>
+
+                        <h5>Conclusion:</h5>
+                        <p>The successful implementation of Getinspex transformed the healthcare facility’s inspection
+                            process, helping to streamline operations, reduce paperwork, and improve compliance with
+                            industry regulations. This case study demonstrates how **digital transformation** can
+                            enhance efficiency, reduce risks, and ensure safety in regulated environments like
+                            healthcare.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--Gps Control System-->
     <section>
         <div class="circuit">
             <div class="container">
@@ -678,97 +866,128 @@
         </div>
 
     </section>
-
-
-
-
-
-    <section class="contact-section py-5" data-aos="fade-up">
-        <div class="container py-4">
-            <div class="row text-center mb-5" data-aos="zoom-in">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class=" heading_grow contact-display-4 fw-bold">Let's Grow Your Business – Talk to Us!</h2>
-                </div>
-            </div>
+    <!--Pricing-->
+    <section class="pricing py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Pricing Plans</h2>
+            <p class="text-center mb-5">Choose the perfect plan for your needs. Whether you're just starting or need
+                enterprise-level solutions, Getinspex has you covered.</p>
 
             <div class="row">
-                <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
-                    <h3 class="contact-heading mb-4">Contact us</h3>
-
-                    <div class="contact-item d-flex align-items-center mb-4" data-aos="fade-up" data-aos-delay="100">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <div class="contact-info">
-                            <h4 class="contact-info-title">Call us</h4>
-                            <p class="contact-info-detail">+971 50 785 7279</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item d-flex align-items-center mb-4" data-aos="fade-up" data-aos-delay="200">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-info">
-                            <h4 class="contact-info-title">Email</h4>
-                            <p class="contact-info-detail">info@getinspex.com</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="300">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-info">
-                            <h4 class="contact-info-title">Based in</h4>
-                            <p class="contact-info-detail mb-0">Sharjah Media city UAE</p>
-                            <p class="contact-info-detail">New Mexico</p>
-                        </div>
+                <div class="col-md-4 mb-4">
+                    <div class="pricing-card">
+                        <h4>Basic Plan</h4>
+                        <p class="price">$29/month</p>
+                        <ul>
+                            <li>1 User</li>
+                            <li>Basic Task Assignments</li>
+                            <li>GPS Integration</li>
+                            <li>Basic Reporting</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Choose Plan</a>
                     </div>
                 </div>
 
-                <div class="col-lg-7" data-aos="fade-left">
-                    <div class="contact-form-container">
-                        <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
-                            <input type="hidden" name="access_key" value="e7f165cc-7e95-4f36-b9f6-03c8b7cb6d3e">
-                            <h3 class="contact-form-heading mb-4">Get in touch</h3>
+                <div class="col-md-4 mb-4">
+                    <div class="pricing-card">
+                        <h4>Professional Plan</h4>
+                        <p class="price">$59/month</p>
+                        <ul>
+                            <li>5 Users</li>
+                            <li>Advanced Task Management</li>
+                            <li>Real-Time GPS Tracking</li>
+                            <li>Custom Reports</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Choose Plan</a>
+                    </div>
+                </div>
 
-                            <div class="mb-3">
-                                <label for="fullName" class="contact-form-label">Full Name*</label>
-                                <input type="text" name="name" class="contact-form-control form-control" id="fullName"
-                                    placeholder="Jacob" required />
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="email" class="contact-form-label">Email Address*</label>
-                                <input type="email" name="email" class="contact-form-control form-control" id="email"
-                                    placeholder="example@email.com" required />
-                            </div>
-
-                            <div class="mb-4">
-                                <label for="message" class="contact-form-label">Message*</label>
-                                <textarea class="contact-form-control form-control" id="message" rows="5" name="message"
-                                    placeholder="Message" required></textarea>
-                            </div>
-
-                            <div class="mb-4 form-check contact-form-check">
-                                <input type="checkbox" class="contact-form-check-input form-check-input"
-                                    id="privacyPolicy" required />
-                                <label class="contact-form-check-label form-check-label" for="privacyPolicy">
-                                    I have read and accepted the <a href="#" class="contact-privacy-link">Privacy
-                                        Policy</a>
-                                </label>
-                            </div>
-
-                            <button type="submit" class="btn_submit contact-btn-submit">Submit Now</button>
-                        </form>
+                <div class="col-md-4 mb-4">
+                    <div class="pricing-card">
+                        <h4>Enterprise Plan</h4>
+                        <p class="price">$149/month</p>
+                        <ul>
+                            <li>Unlimited Users</li>
+                            <li>Advanced Analytics</li>
+                            <li>Full API Access</li>
+                            <li>Priority Support</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Choose Plan</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- Testimonials Section with Carousel -->
+    <section class="testimonials py-5">
+        <div class="container">
+            <h2 class="text-center mb-4 display-4 font-weight-bold text-primary">What Our Clients Say</h2>
 
+            <!-- Carousel Wrapper -->
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- Testimonial Item 1 -->
+                    <div class="carousel-item active">
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"Getinspex has completely transformed the way we conduct site
+                                inspections. The real-time tracking and digital checklists have made our processes more
+                                efficient and our inspections more compliant."
+                                <strong>- John Doe, Construction Manager</strong>
+                            </p>
+                        </div>
+                    </div>
 
+                    <!-- Testimonial Item 2 -->
+                    <div class="carousel-item">
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"We saw a 30% increase in efficiency after implementing
+                                Getinspex. The integration with GPS and easy report submission saved us valuable time
+                                and effort."
+                                <strong>- Jane Smith, Facilities Manager</strong>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial Item 3 (Dummy) -->
+                    <div class="carousel-item">
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"Getinspex has significantly improved our workflow. The user
+                                interface is intuitive, and task tracking is now seamless."
+                                <strong>- Michael Brown, Operations Director</strong>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial Item 4 (Dummy) -->
+                    <div class="carousel-item">
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"Thanks to Getinspex, we now have better control over our
+                                inspection process, saving us both time and resources."
+                                <strong>- Emily Davis, Safety Officer</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <!-- Call to Action Button -->
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-primary btn-lg">See Why Clients Love Us</a>
+            </div>
+        </div>
+    </section>
 
     <!-- FAQ Section -->
     <section class="faq-section py-5" data-aos="fade-up">
@@ -885,20 +1104,92 @@
         </div>
     </section>
 
+    <!--Contact section-->
+    <section class="contact-section py-5" data-aos="fade-up">
+        <div class="container py-4">
+            <div class="row text-center mb-5" data-aos="zoom-in">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class=" heading_grow contact-display-4 fw-bold">Let's Grow Your Business – Talk to Us!</h2>
+                </div>
+            </div>
 
-    <script>
-        // Custom script to change icons when accordion items are toggled
-        document.querySelectorAll('.accordion-button').forEach(button => {
-            button.addEventListener('click', function () {
-                const icon = this.querySelector('.custom-icon i');
-                if (this.classList.contains('collapsed')) {
-                    icon.classList.replace('bi-plus', 'bi-dash');
-                } else {
-                    icon.classList.replace('bi-dash', 'bi-plus');
-                }
-            });
-        });
-    </script>
+            <div class="row">
+                <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
+                    <h3 class="contact-heading mb-4">Contact us</h3>
+
+                    <div class="contact-item d-flex align-items-center mb-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h4 class="contact-info-title">Call us</h4>
+                            <p class="contact-info-detail">+971 50 785 7279</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item d-flex align-items-center mb-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h4 class="contact-info-title">Email</h4>
+                            <p class="contact-info-detail">info@getinspex.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h4 class="contact-info-title">Based in</h4>
+                            <p class="contact-info-detail mb-0">Sharjah Media city UAE</p>
+                            <p class="contact-info-detail">New Mexico</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="contact-form-container">
+                        <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+                            <input type="hidden" name="access_key" value="e7f165cc-7e95-4f36-b9f6-03c8b7cb6d3e">
+                            <h3 class="contact-form-heading mb-4">Get in touch</h3>
+
+                            <div class="mb-3">
+                                <label for="fullName" class="contact-form-label">Full Name*</label>
+                                <input type="text" name="name" class="contact-form-control form-control" id="fullName"
+                                    placeholder="Jacob" required />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="contact-form-label">Email Address*</label>
+                                <input type="email" name="email" class="contact-form-control form-control" id="email"
+                                    placeholder="example@email.com" required />
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="message" class="contact-form-label">Message*</label>
+                                <textarea class="contact-form-control form-control" id="message" rows="5" name="message"
+                                    placeholder="Message" required></textarea>
+                            </div>
+
+                            <div class="mb-4 form-check contact-form-check">
+                                <input type="checkbox" class="contact-form-check-input form-check-input"
+                                    id="privacyPolicy" required />
+                                <label class="contact-form-check-label form-check-label" for="privacyPolicy">
+                                    I have read and accepted the <a href="#" class="contact-privacy-link">Privacy
+                                        Policy</a>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn_submit contact-btn-submit">Submit Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Section -->
     <footer class="footer-section bg-dark text-light py-4">
         <div class="container">
@@ -956,7 +1247,8 @@
         </div>
     </footer>
 
-    </script>
+    <script src="Script.js"></script>
+
 
 </body>
 

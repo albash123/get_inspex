@@ -1,6 +1,6 @@
 :root {
   --primary-color: #e96f00;
-  --dark-bg: #ffffff;
+  --dark-bg: #2a2929;
   --text-lights_waves: #e96f00;
   --text-light: #000000;
   --card-bg: #000000;
@@ -14,7 +14,7 @@ body {
 }
 
 .navbar {
-  background-color: var(--dark-bg);
+  background-color: var(--dark-bg) !important;
   padding: 1rem 0;
 }
 
@@ -67,7 +67,7 @@ body {
   /* optional animation or background SVGs can be added here */
 }
 .sect_crds {
-  background-color: #60606028;
+  background-color: var(--card-bg) !important;
 }
 
 .main_sect-title {
@@ -139,8 +139,6 @@ body {
   position: relative;
   max-width: 100%;
   height: auto;
-}
-.phone-container {
 }
 
 .phone-mockup img {
@@ -220,10 +218,10 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Initial box shadow */
   background: linear-gradient(
     45deg,
-    #d50c0c,
-    #e5d8b4,
+    #cdc2c2,
+    #a49f91,
     #f3e7fe,
-    #949494bc
+    #250202bc
   ); /* Multi-color gradient */
   background-size: 400% 400%; /* Larger gradient for smooth transition */
   animation: gradientAnimation 10s ease infinite; /* Smooth, continuous animation */
@@ -1497,7 +1495,7 @@ main {
 
 .feature-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 20px rgba(200, 15, 15, 0.2) !important;
 }
 
 /* Overlay for "See Details" text */
@@ -2176,4 +2174,383 @@ main {
     height: 380px; /* Or any larger value suitable for mobile */
     width: 100%; /* Optional: make it full width on mobile */
   }
+}
+/* Main Section Styling */
+.industry-solutions {
+  background-color: var(--primary-color);
+}
+
+.industry-solutions h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--card-bg);
+}
+
+.industry-solutions p {
+  color: #666;
+  font-size: 1rem;
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+}
+
+/* Card Styling */
+.industry-card {
+  background-color: #f8f8f8c5;
+  border: 2px solid #232121;
+  border-radius: 12px;
+  padding: 20px;
+  height: 100%;
+  transition: all 0.3s ease;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.industry-card:hover {
+  background-color: #000000;
+  color: #e96f00 !important;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.industry-card h4 {
+  color: #e96f00;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.industry-card:hover h4 {
+  color: #e96f00;
+}
+
+.industry-card p {
+  font-size: 0.95rem;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.industry-card:hover p {
+  color: #c9c8c8;
+}
+/* Case Studies Section */
+.case-studies {
+  background-color: var(--card-bg);
+}
+
+.case-studies h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #e96f00;
+}
+
+.case-studies p {
+  color: #666;
+  font-size: 1rem;
+  max-width: 750px;
+  margin: 0 auto 2rem auto;
+}
+
+/* Case Study Card Styling */
+.case-study-card {
+  background-color: #fefefe;
+  border: 2px solid #e96f00;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.case-study-card h4 {
+  color: #e96f00;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.case-study-card p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 0.75rem;
+}
+
+.case-study-card strong {
+  color: #e96f00;
+}
+
+.case-study-card:hover {
+  background-color: #e96f00;
+  color: #fff;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.case-study-card:hover h4,
+.case-study-card:hover p,
+.case-study-card:hover strong {
+  color: #fff;
+}
+
+/* Button Styling */
+.case-study-card .btn-primary {
+  background-color: #e96f00;
+  border: none;
+  padding: 8px 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.case-study-card .btn-primary:hover {
+  background-color: #cc5f00;
+}
+/* Pricing Section */
+.pricing {
+  background-color: #f9f9f9;
+}
+
+.pricing h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.pricing p {
+  font-size: 1rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+/* Pricing Card Styles */
+.pricing-card {
+  background-color: #fff;
+  border: 2px solid #e96f00;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  text-align: center;
+  height: 100%;
+}
+
+.pricing-card:hover {
+  background-color: #e96f00;
+  color: #fff;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card h4 {
+  font-size: 1.4rem;
+  color: #e96f00;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.pricing-card .price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin: 15px 0;
+  transition: color 0.3s;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.pricing-card ul li {
+  margin: 10px 0;
+  font-size: 0.95rem;
+  color: #555;
+  transition: color 0.3s;
+}
+
+/* Hover Text Color Adjustments */
+.pricing-card:hover h4,
+.pricing-card:hover .price,
+.pricing-card:hover ul li {
+  color: #fff;
+}
+
+/* Button Styling */
+.pricing-card .btn-primary {
+  background-color: #e96f00;
+  border: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.pricing-card .btn-primary:hover {
+  background-color: #cc5f00;
+}
+/* Testimonials Section Styling */
+.testimonials {
+  background-color: #f8f9fa; /* Light background for contrast */
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.testimonial-card {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  color: #333;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Testimonial Text */
+.testimonial-text {
+  font-style: italic;
+  font-weight: 400;
+  color: #555;
+  font-size: 1.3rem;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.testimonial-text strong {
+  font-weight: 600;
+  display: block;
+  margin-top: 15px;
+  color: #e96f00; /* Your main color for emphasis */
+}
+
+/* Hover Effect for Testimonial Card */
+.testimonial-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Carousel Controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #e96f00; /* Main color for controls */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Button Styling */
+.btn-primary {
+  background-color: #e96f00;
+  border-color: #e96f00;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #d95f00; /* Darker shade for hover */
+  border-color: #d95f00;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .testimonial-card {
+    padding: 20px;
+    max-width: 100%; /* Full width on smaller screens */
+  }
+
+  .testimonial-text {
+    font-size: 1rem; /* Adjust text size on mobile */
+  }
+
+  .btn-primary {
+    width: 100%; /* Full width button on mobile */
+    font-size: 1rem;
+  }
+}
+/* Modal Styles */
+.modal-content {
+  background-color: #f8f9fa; /* Light background for contrast */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  border-bottom: 2px solid #e96f00; /* Main color for the header */
+  background-color: #e96f00; /* Background color for the header */
+  color: white;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.modal-footer {
+  background-color: #f8f9fa; /* Light background for footer */
+}
+
+/* Adjust button styles */
+.btn-close {
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+.modal-body h5 {
+  font-weight: 600;
+  color: #333;
+}
+
+.modal-body p {
+  color: #555;
+}
+
+.modal-body ul {
+  margin-top: 10px;
+  color: #444;
+}
+/* Modal Body Customization */
+.custom-modal-body {
+  max-height: 70vh; /* Set max height for modal body (70% of viewport height) */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding-right: 15px; /* To prevent content from being hidden behind scrollbar */
+}
+
+/* Ensure modal header and footer are fixed */
+.modal-header,
+.modal-footer {
+  background-color: #f8f9fa; /* Optional: Light background for header/footer */
+  border-bottom: 2px solid #e96f00; /* Your main color for the header */
+}
+
+/* Modal Body Content Styling */
+.modal-body h5 {
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+}
+
+.modal-body p,
+.modal-body ul {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.modal-body ul {
+  margin-top: 10px;
+}
+
+.modal-body li {
+  margin-bottom: 8px;
 }
