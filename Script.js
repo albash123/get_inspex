@@ -40,3 +40,65 @@ document.addEventListener("DOMContentLoaded", function () {
     circuitLines.appendChild(line);
   }
 });
+const testimonials = [
+  {
+    quote:
+      "Production Online has helped me become a better musician and producer than I ever thought possible.",
+    name: "Kyle Weznick",
+    title: "Media Director, Turn Around Music Group",
+    avatar:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-3h4bGa6PwAujLnUU5b5Zb55hNxS21P.png",
+  },
+  {
+    quote:
+      "Their lessons are clear, practical, and instantly leveled-up my mixes.",
+    name: "Olivia Ramirez",
+    title: "Independent Producer",
+    avatar: "https://randomuser.me/api/portraits/women/65.jpg",
+  },
+  {
+    quote:
+      "I landed two sync placements after applying what I learned last month!",
+    name: "James “Jimmy” Lee",
+    title: "Composer & Guitarist",
+    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+  },
+  {
+    quote: "The community feedback alone is worth the subscription price.",
+    name: "Priya Shah",
+    title: "Singer-Songwriter",
+    avatar: "https://randomuser.me/api/portraits/women/48.jpg",
+  },
+];
+
+let idx = 0;
+
+/* Element refs */
+const quoteEl = document.getElementById("testimonialQuote");
+const nameEl = document.getElementById("testimonialName");
+const titleEl = document.getElementById("testimonialTitle");
+const avatarEl = document.getElementById("testimonialAvatar");
+
+/* Swap helper */
+function showTestimonial(i) {
+  const t = testimonials[i];
+  quoteEl.classList.add("opacity-0");
+  setTimeout(() => {
+    quoteEl.textContent = t.quote;
+    nameEl.textContent = t.name;
+    titleEl.textContent = t.title;
+    avatarEl.src = t.avatar;
+    avatarEl.alt = t.name;
+    quoteEl.classList.remove("opacity-0");
+  }, 150); /* sync with CSS transition */
+}
+
+/* Prev / next handlers */
+document.getElementById("prevTestimonial").addEventListener("click", () => {
+  idx = (idx - 1 + testimonials.length) % testimonials.length;
+  showTestimonial(idx);
+});
+document.getElementById("nextTestimonial").addEventListener("click", () => {
+  idx = (idx + 1) % testimonials.length;
+  showTestimonial(idx);
+});

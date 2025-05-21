@@ -204,33 +204,126 @@ body {
   text-align: center;
   font-size: 3.5rem;
   font-weight: bold;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  color: var(--text-lights_waves);
+  color: #e96f00 !important;
+}
+/*  A.  ensure the section is a stacking context  */
+.sect_crds {
+  position: relative;
+  overflow: hidden; /* hides video overflow on small screens   */
+}
+
+/*  B.  background video fills the section  */
+.bg-video {
+  position: absolute;
+  inset: 0; /* shorthand for top:0;right:0;bottom:0;left:0 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* crops without distortion                 */
+  z-index: 0; /* stays behind everything                  */
+  pointer-events: none; /* clicks pass through                      */
 }
 .feature-card {
-  position: relative; /* for absolutely-positioned overlay */
-  overflow: hidden;
-  padding: 1rem 1.5rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Initial box shadow */
-  background: linear-gradient(
-    45deg,
-    #cdc2c2,
-    #a49f91,
-    #f3e7fe,
-    #250202bc
-  ); /* Multi-color gradient */
-  background-size: 400% 400%; /* Larger gradient for smooth transition */
-  animation: gradientAnimation 10s ease infinite; /* Smooth, continuous animation */
+  background: rgba(
+    73,
+    71,
+    70,
+    0.444
+  ) !important; /* 20 % opaque “frosted” white  */
+  backdrop-filter: blur(4px) !important; /* glass-morphism               */
+  -webkit-backdrop-filter: blur(
+    10px
+  ) !important; /* Safari                       */
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  z-index: 1;
+  /* sits above the video         */
+}
+/* keep the heading in front of everything */
+.section-title {
+  position: relative; /* gives it a stacking context */
+  z-index: 1; /* > video (0) and > cards (1) */
+  color: #ffffff; /* bright colour always visible on video */
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45); /* optional readability boost */
+}
+
+/* If you want everything INSIDE the container above the video */
+.sect_crds > .container {
+  position: relative;
+  z-index: 1; /* so the whole block clears the video layer */
+}
+
+/* optional: soften card overlay panes too */
+.card-overlay {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(6px);
+}
+.feature-card {
+  /* glass: */
+  background: rgba(255, 208, 0, 0.2); /* remove the orange line */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 10px solid rgba(255, 255, 255, 0.35);
+  border: 5px solid #e96f00 !important;
+  /* your existing extras… */
+  box-shadow: 0 40px 25px rgba(234, 0, 0, 0.1);
   border-radius: 15px;
-  height: 640px;
-  color: black !important;
+  height: 540px;
+  color: #000;
   text-align: center;
   cursor: pointer;
-  position: relative;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative; /* keep for overlay if needed           */
+  overflow: hidden;
+  z-index: 1;
+}
+/* keep your existing .feature-card rule as-is */
+/* ✨ gentle inner-glow overlay */
+/* allow the halo to extend past the edges */
+.feature-card {
+  overflow: visible; /* was hidden – switch to visible   */
+}
+
+/* 🌟 outer-rays / halo */
+.feature-card::after {
+  content: "";
+  position: absolute;
+  inset: -8px; /* 8 px bigger than the card all around */
+  border-radius: 20px; /* a bit larger so the glow is smooth   */
+  pointer-events: none;
+  z-index: -1; /* sits *behind* the card               */
+
+  /* radial gradient that fades outward */
+  background: radial-gradient(
+    circle at center,
+    rgba(233, 111, 0, 0.45) 0%,
+    rgba(233, 111, 0, 0) 70%
+  );
+
+  filter: blur(12px); /* softens the rays                     */
+  opacity: 0.5; /* base strength                        */
+  animation: rayPulse 4s ease-in-out infinite;
+}
+
+/* subtle breathing motion */
+@keyframes rayPulse {
+  0%,
+  100% {
+    transform: scale(0.96);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.65;
+  }
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 118px 220px rgba(214, 68, 68, 0.2);
+  background: rgba(0, 0, 0, 0.28); /* stays translucent */
 }
 
 /* Animation for smooth color transition */
@@ -251,9 +344,14 @@ body {
   transform: translateY(-10px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
+.highliht {
+  color: #e96f00 !important;
+  font-weight: 600;
+  font-size: 1rem;
+}
 
 .text-dark {
-  color: #3c3939 !important;
+  color: #cdc8c8 !important;
   text-align: start;
   font-size: 16px;
 }
@@ -318,7 +416,7 @@ ul.text-light li i {
   font-weight: 900;
   text-align: start !important;
   margin-bottom: 15px;
-  color: var(--primary-color);
+  color: var(--text-light);
 }
 
 ul.text-light {
@@ -566,7 +664,7 @@ ul.text-light li {
 .hero-title-gps {
   color: #e96f00;
   font-weight: 600;
-  font-size:3rem !important;
+  font-size: 3rem !important;
 }
 
 .hero-text-gps {
@@ -1261,116 +1359,7 @@ ul.text-light li {
     font-size: 1rem;
   }
 }
-.contact-section {
-  position: relative;
-  padding: 80px 0;
-  overflow: hidden;
-}
 
-.contact-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-QlA9JT11OMgXEQM0F0Y6rbJIzaO3XT.png");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.15;
-  z-index: -1;
-}
-
-.contact-heading {
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #0a3d3f;
-}
-
-.help-text {
-  color: #ff5722;
-  font-weight: 700;
-}
-
-.contact-description {
-  color: #555;
-  margin-bottom: 40px;
-  line-height: 1.7;
-}
-
-.location-heading {
-  font-weight: 600;
-  color: #0a3d3f;
-  margin-bottom: 25px;
-  letter-spacing: 2px;
-}
-
-.contact-info {
-  margin-bottom: 40px;
-}
-
-.contact-item {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 20px;
-}
-
-.contact-icon {
-  width: 40px;
-  height: 40px;
-  background-color: #ff5722;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 15px;
-  color: white;
-  flex-shrink: 0;
-}
-
-.contact-text {
-  color: #555;
-  font-size: 0.95rem;
-  letter-spacing: 0.5px;
-}
-
-.contact-text a {
-  color: #555;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.contact-text a:hover {
-  color: #ff5722;
-}
-
-@media (max-width: 767.98px) {
-  .contact-section {
-    padding: 50px 0;
-  }
-
-  .contact-heading {
-    font-size: 1.8rem;
-  }
-
-  .help-text {
-    font-size: 1.8rem;
-  }
-}
-
-@media (max-width: 575.98px) {
-  .contact-heading {
-    font-size: 1.5rem;
-  }
-
-  .help-text {
-    font-size: 1.5rem;
-  }
-
-  .contact-description {
-    font-size: 0.9rem;
-  }
-}
 main {
   flex: 1;
   background-color: #f8f9fa;
@@ -1494,7 +1483,7 @@ main {
 } /* Custom CSS for responsive card and modal */
 .feature-card {
   position: relative;
-  background-color: var(--card-bg);
+  background-color: #e96f00;
   color: var(--text-light);
   padding: 20px;
   border-radius: 15px;
@@ -1504,6 +1493,7 @@ main {
   width: 100%;
   max-width: 400px; /* Set maximum width for desktop */
   margin: auto;
+  text-align: center;
 }
 
 .feature-card:hover {
@@ -1727,7 +1717,6 @@ main {
 }
 
 .contact-section {
-  background-color: #fafafa;
   padding: 40px 0;
 }
 
@@ -1952,6 +1941,10 @@ main {
     flex-direction: row;
     align-items: center;
   }
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .inside_con-content {
@@ -2383,46 +2376,81 @@ main {
   background-color: #cc5f00;
 }
 /* Testimonials Section Styling */
-.testimonials {
-  background-color: #f8f9fa; /* Light background for contrast */
-  padding-top: 40px;
-  padding-bottom: 40px;
+/* ===== Testimonials – layout & colours ===== */
+.testimonials-section {
+  background: #2a2929;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0 0 4rem; /* bottom room for carousel dots if added */
 }
-
 .testimonial-card {
-  background-color: #fff;
-  border-radius: 15px;
-  padding: 30px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  color: #333;
-  font-size: 1.2rem;
-  line-height: 1.8;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
-}
-
-/* Testimonial Text */
-.testimonial-text {
-  font-style: italic;
-  font-weight: 400;
-  color: #555;
-  font-size: 1.3rem;
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem 2.5rem;
+  color: #000;
   text-align: center;
-  line-height: 1.6;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  /* animations */
+  opacity: 0;
+  transform: translateY(40px) scale(0.96);
+  animation: fadeUp 0.8s ease-out forwards;
 }
-
-.testimonial-text strong {
+.carousel-item.active .testimonial-card {
+  /* animate on every slide */
+  animation: fadeUp 0.8s ease-out forwards;
+}
+blockquote {
+  font-size: 1.15rem;
+  line-height: 1.55;
+  margin: 0 0 1.25rem;
+}
+figcaption {
   font-weight: 600;
-  display: block;
-  margin-top: 15px;
-  color: #e96f00; /* Your main color for emphasis */
+  font-size: 1rem;
+  letter-spacing: 0.2px;
 }
 
-/* Hover Effect for Testimonial Card */
-.testimonial-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+/* ===== Heading shimmer ===== */
+.shimmer {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+.shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 100%
+  );
+  animation: shine 4s infinite;
+}
+
+/* ===== Keyframes ===== */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes shine {
+  to {
+    left: 150%;
+  }
+}
+
+/* ===== Carousel controls (white icons) ===== */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
 }
 
 /* Carousel Controls */
@@ -2550,6 +2578,49 @@ main {
 .modal-body li {
   margin-bottom: 8px;
 }
+/* 2️⃣  coloured blob lights */
+@keyframes blobFloat {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.35);
+  }
+}
+
+.key_features-section::after {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: 80%; /* starting anchor */
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0) 60%
+  );
+  filter: blur(80px);
+  animation: blobFloat 12s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* optional 2nd blob in CSS only if you want more depth */
+.key_features-diagonal-line-2::after {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: 15%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #e96f00 0%, rgba(0, 0, 0, 0) 60%);
+  filter: blur(90px);
+  animation: blobFloat 14s ease-in-out reverse infinite;
+  pointer-events: none;
+  z-index: 0;
+}
 
 .key_features-section {
   padding: 5rem 1rem;
@@ -2628,17 +2699,100 @@ main {
     margin-bottom: 3rem;
   }
 }
+/* ---------- 1. Base card upgrades ---------- */
 .custom-feature-card {
   position: relative;
-  background-size: cover;
-  background-position: center;
   height: 300px;
   border-radius: 12px;
   overflow: hidden;
-  border: 2px solid #e96f00;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
   cursor: pointer;
+
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #000;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+
+  transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.35s ease, filter 0.35s ease, border-color 0.35s ease;
+
+  animation: cardFloat 8s ease-in-out infinite;
+}
+
+/* ---------- 2. Lively background pan ---------- */
+@keyframes bgPan {
+  0%,
+  100% {
+    background-position: center 0%;
+  }
+  50% {
+    background-position: center 40%;
+  }
+}
+.custom-feature-card {
+  animation: cardFloat 8s ease-in-out infinite, bgPan 20s linear infinite;
+}
+
+/* ---------- 3. Hover lift, tilt & glow ---------- */
+.custom-feature-card:hover {
+  transform: translateY(-12px) scale(1.05) rotateX(2deg) rotateY(-3deg);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35), 0 0 25px rgba(233, 113, 0, 0.307); /* orange glow */
+  filter: brightness(0.7);
+  border-color: #e96f00; /* brand accent */
+}
+
+/* ---------- 4. Soft light overlay (fades on hover) ---------- */
+.custom-feature-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+.custom-feature-card:hover::before {
+  opacity: 0.6;
+}
+/* 🔹 1. Global size ↓ */
+.custom-feature-card {
+  height: 220px; /* was 300px */
+  border-radius: 10px; /* proportionally smaller corners */
+}
+
+/* 🔹 2. Tighten padding in the overlay (optional) */
+.custom-feature-overlay {
+  padding: 1.25rem; /* was 2rem in the hover-overlay snippet */
+}
+
+/* 🔹 3. Even smaller on large desktops */
+@media (min-width: 1200px) {
+  /* ≥ lg+ */
+  .custom-feature-card {
+    height: 200px;
+  }
+}
+
+/* 🔹 4. And a comfortable size on phones */
+@media (max-width: 575.98px) {
+  /* ≤ xs */
+  .custom-feature-card {
+    height: 180px;
+  }
+}
+
+/* ---------- 5. Keyframes ---------- */
+@keyframes cardFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 .custom-feature-card:hover {
@@ -2709,7 +2863,7 @@ main {
   border-radius: 12px;
   color: #fff;
   overflow: hidden;
-  background-color: #e96f00;
+  background-color: #e96f00 !important;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
@@ -2922,6 +3076,53 @@ main {
   height: 100%;
   background-color: #e96f00;
   clip-path: polygon(69% 0, 100% 0, 100% 100%, 0% 100%);
+}
+/* ─── DIAGONAL BACKDROP FOR .gps SECTION ───────────────────────── */
+.gps {
+  position: relative; /* create stacking context       */
+  overflow: hidden; /* clip the diagonal edges       */
+}
+
+/* colourful divider */
+.gps::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* stretch full section          */
+  background: #58300b; /* brand orange                  */
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%);
+  z-index: 0; /* behind all real content       */
+  pointer-events: none; /* never blocks clicks           */
+}
+
+/* lift your actual content above the divider */
+.gps > .circuit {
+  position: relative;
+  z-index: 1;
+}
+/* ─── DIAGONAL BACKDROP FOR .case (from the right) ─────────────── */
+.case {
+  position: relative; /* stacking context                */
+  overflow: hidden; /* clip the diagonal edge          */
+}
+
+.case::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* full section                    */
+  background: #58300b; /* brand orange                    */
+
+  /* right-hand diagonal: top-right across to ~30% of bottom edge */
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%);
+  /* adjust the “30%” to widen or narrow the coloured area        */
+
+  z-index: 0; /* stay behind real content        */
+  pointer-events: none;
+}
+
+/* lift inner container above the stripe */
+.case > .case-study-container {
+  position: relative;
+  z-index: 1;
 }
 
 .tab-section {
@@ -3169,15 +3370,53 @@ main {
   transform: translateY(0);
 }
 .case {
-  background-color: #000000;
-  height: 100vh;
-  padding: 20px;
+  background-color: #000; /* dark backdrop      */
+  height: 100vh; /* full-viewport on desktop */
+  padding: 10px;
 }
+/* 1️⃣  Ultra-wide desktops  ─────────────── 1440 px and up */
+@media (min-width: 1440px) {
+  .case {
+    height: 100vh; /* full-viewport hero */
+    padding: 32px 20px; /* extra breathing room */
+  }
+}
+
+/* 2️⃣  Tablets / small laptops ──── 1024 px and down */
+@media (max-width: 1024px) {
+  .case {
+    height: auto; /* grow naturally */
+    min-height: 180vh; /* still fill if short */
+    padding: 24px 16px;
+  }
+  .main-title {
+    font-size: 2.25rem;
+  } /* scale heading a bit */
+}
+
+/* 3️⃣  Phones & narrow tablets ──── 768 px and down */
+@media (max-width: 768px) {
+  .case {
+    padding: 20px 12px; /* tight gutter */
+  }
+  .section-header {
+    font-size: 1.2rem;
+  }
+  .section-content ul li {
+    font-size: 0.9rem;
+  }
+}
+
+/* ─── Media queries ────────────────────────────────────── */
+
+/* Tablets (portrait & down) */
+
 .main-title {
   color: #fff;
   font-size: 2.5rem;
   text-align: center;
   margin: 30px 0;
+
   font-weight: 300;
   letter-spacing: 1px;
 }
@@ -3249,4 +3488,490 @@ main {
   .case-study-row > div {
     margin-bottom: 20px;
   }
+}
+/* ====== Dark variant ====== */
+.management-security {
+  background: #000; /* full-width black backdrop */
+}
+.management-security h2,
+.management-security .lead {
+  color: #fff; /* white works best on black;
+                                      change if you want all-black text */
+}
+
+.ms-card {
+  background: #e96f00; /* primary orange */
+  color: #000 !important; /* make sure all text inside is black */
+  box-shadow: none; /* optional: flatter look on dark bg */
+}
+.ms-card-title {
+  color: #000 !important;
+}
+/* ===== Colors ===== */
+:root {
+  --ms-primary: #e96f00; /* card orange */
+  --ms-bg: #000; /* black background */
+}
+
+/* ===== Section wrapper ===== */
+.ms-section {
+  background: var(--ms-bg);
+  padding: 4rem 0;
+  height: 100vh;
+}
+
+/* ===== Text ===== */
+.ms-section h2 {
+  color: #fff;
+}
+.ms-section .lead {
+  color: #ddd;
+}
+
+/* ===== Feature cards ===== */
+.ms-card {
+  background: var(--ms-primary);
+  color: #000;
+  border-radius: 0.7rem;
+  padding: 1rem;
+  height: 100%;
+}
+.ms-card h6 {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+/* ===== Floating image (desktop only) ===== */
+.ms-float-img {
+  max-width: 90%;
+  position: sticky;
+  top: 6rem;
+}
+@media (max-width: 991.98px) {
+  .ms-float-img {
+    display: none;
+  }
+}
+/* ─── DIAGONAL BACKDROP · MANAGEMENT & SECURITY ────────────── */
+.ms-section {
+  position: relative; /* stacking context */
+  overflow: hidden; /* clip coloured wedge */
+}
+
+.ms-section::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* cover full section */
+  background: #96521296; /* brand orange */
+
+  /* right-hand wedge, slopes down to the left           */
+  /*     top-right corner  →  bottom-left at 70% height   */
+  clip-path: polygon(100% 0, 100% 100%, 100% 100%, 0 0%, 0 0);
+
+  /* tweak the “30%” and “0 70%” points to widen/narrow   */
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* lift real content above the wedge */
+.ms-section > .container {
+  position: relative;
+  z-index: 1;
+}
+/* ─── DIAGONAL BACKDROP · TESTIMONIALS ────────────────────────── */
+.testimonials-section {
+  position: relative; /* new stacking context            */
+  overflow: hidden; /* clip the coloured wedge         */
+}
+
+.testimonials-section::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* cover the whole section         */
+  background: #58300b; /* brand orange                    */
+
+  /* right-side wedge, top-right → ~35% of bottom */
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%);
+
+  /* tweak “35%” (bottom-right) & “0 70%” (bottom-left pivot)
+       to make the wedge narrower or wider                  */
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* lift carousel & text above the wedge */
+.testimonials-section > .container {
+  position: relative;
+  z-index: 1;
+}
+/* ─── DIAGONAL BACKDROP · FAQ SECTION ─────────────────────────── */
+.faq-section {
+  position: relative; /* stacking context               */
+  overflow: hidden; /* clip the coloured wedge
+  */
+  background-color: #000;
+}
+
+.faq-section::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* cover the whole section        */
+  background: #58300b; /* brand orange                  */
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%);
+
+  /* tweak “35%” & “0 70%” if you want the wedge narrower / wider */
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* lift real content above the wedge */
+.faq-section > .container {
+  position: relative;
+  z-index: 1;
+}
+/* ─── DIAGONAL BACKDROP · CONTACT SECTION ───────────────────── */
+.contact-section {
+  position: relative; /* stacking context              */
+  overflow: hidden; /* clip the coloured wedge   
+      */
+  background-color: #2a2929;
+}
+
+.contact-section::before {
+  content: "";
+  position: absolute;
+
+  background: #96521296; /* brand orange                    */
+
+  /* right-side wedge, top-right → ~35% of bottom */
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%);
+
+  /* tweak “35%” and “0 70%” to widen or narrow the panel */
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* lift inner content above the wedge */
+.contact-section > .container {
+  position: relative;
+  z-index: 1;
+}
+/* === Layout === */
+/* Base style (applies to everything unless overridden)  */
+.testimonial-section {
+  background: #e96f00;
+  height: 70vh;
+  padding-top: 58px;
+  border: 3px solid #e96f00;
+}
+
+/* ───────────────────────────────
+   ≤ 425 px  – small phones
+   ─────────────────────────────── */
+@media (max-width: 425px) {
+  .testimonial-section {
+    height: auto; /* let content define height */
+    padding-top: 40px; /* tighter top spacing        */
+  }
+}
+
+/* ───────────────────────────────
+   426 px – 767 px  – large phones / small tablets
+   ─────────────────────────────── */
+@media (min-width: 426px) and (max-width: 767px) {
+  .testimonial-section {
+    height: 60vh;
+    padding-top: 50px;
+  }
+}
+
+/* ───────────────────────────────
+   768 px – 1023 px  – portrait tablets / small laptops
+   ─────────────────────────────── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .testimonial-section {
+    height: 75vh; /* give a bit more vertical room */
+    padding-top: 58px; /* keep original offset          */
+  }
+}
+
+/* ───────────────────────────────
+   ≥ 1024 px  – desktops & large tablets
+   (rule optional since base covers it,
+   but included here for clarity/override)
+   ─────────────────────────────── */
+@media (min-width: 1024px) {
+  .testimonial-section {
+    height: 70vh;
+    padding-top: 58px;
+  }
+}
+
+/* === Layout === */
+
+/* ───────── Base (≥ 1024 px) ───────── */
+.testimonial-heading {
+  font-size: 3.5rem; /* ≈56 px */
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0;
+  color: #000;
+}
+.community-text {
+  font-size: 4rem; /* ≈64 px */
+  font-weight: 900;
+  color: #fff;
+}
+
+/* ───────── 768 – 1023 px  (tablets / small laptops) ───────── */
+@media (max-width: 1023px) {
+  .testimonial-heading {
+    font-size: 3rem;
+  } /* 48 px */
+  .community-text {
+    font-size: 3.4rem;
+  } /* 54 px */
+}
+
+/* ───────── 426 – 767 px  (large phones / portrait tablets) ───────── */
+@media (max-width: 767px) {
+  .testimonial-heading {
+    font-size: 2.4rem;
+  } /* 38 px */
+  .community-text {
+    font-size: 2.8rem;
+  } /* 45 px */
+}
+
+/* ───────── ≤ 425 px  (small & medium phones) ───────── */
+@media (max-width: 425px) {
+  .testimonial-heading {
+    font-size: 1.9rem;
+  } /* 30 px */
+  .community-text {
+    font-size: 2.2rem;
+  } /* 35 px */
+}
+
+.testimonial-subheading {
+  margin-top: 20px;
+  font-size: 2.2rem;
+  color: #ffffff;
+}
+
+/* Testimonial block */
+.quote-mark {
+  font-size: 4rem;
+  color: #4a4de7;
+  line-height: 0;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.testimonial-quote {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.3;
+  transition: opacity 0.3s ease;
+  color: #fff;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+/* used for fade-in */
+
+/* Avatar + person info */
+.avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.person-name {
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.person-title {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Nav buttons */
+.nav-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background 0.25s ease, border 0.25s ease;
+}
+
+.nav-button:hover {
+  background: #f2f2f2;
+  border-color: #bbb;
+}
+/* ===== Bottom-edge rising black glow ===== */
+.testimonial-section {
+  position: relative; /* anchor pseudo-element */
+  overflow: hidden; /* keep the glow inside */
+}
+/* ————— Irregular rising black threads ————— */
+.testimonial-section {
+  position: relative; /* anchor pseudo-elements   */
+  overflow: hidden; /* keep wisps inside bounds */
+}
+
+/* bottom smoke */
+.testimonial-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -80px; /* start below the edge */
+  height: 160px; /* depth of effect      */
+
+  /* tile fuzzy domes across the x-axis */
+  background: radial-gradient(
+      50% 50% at 50% 100%,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.6) 55%,
+      rgba(0, 0, 0, 0) 80%
+    )
+    0 0/120px 120px repeat-x;
+
+  filter: blur(18px); /* soften into wisps    */
+  animation: riseSmoke 8s linear infinite;
+  pointer-events: none;
+}
+
+/* slower, larger wave for extra depth */
+.testimonial-section::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -100px;
+  height: 200px;
+
+  background: radial-gradient(
+      50% 50% at 50% 100%,
+      rgba(0, 0, 0, 1.75) 0%,
+      rgba(0, 0, 0, 0.45) 60%,
+      rgba(0, 0, 0, 0) 90%
+    )
+    60px 0/180px 180px repeat-x;
+
+  filter: blur(24px);
+  animation: riseSmokeSlow 12s linear infinite;
+  pointer-events: none;
+}
+
+/* keyframes */
+@keyframes riseSmoke {
+  to {
+    transform: translateY(-90px);
+  }
+}
+@keyframes riseSmokeSlow {
+  to {
+    transform: translateY(-110px);
+  }
+}
+.contact-card {
+  max-width: 1920px;
+  /* overall width */
+  background-color: #e96f00 !important;
+  border-radius: 20px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+/* ===== Leafy side ===== */
+.contact-img {
+  background: url("https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGJsdXUlMjBpbWFnZXxlbnwwfHx8fDE2OTI3NTY5NzE&ixlib=rb-4.0.3&q=80&w=1080")
+    no-repeat center center;
+  min-height: 100%;
+}
+
+.img-overlay {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 2rem;
+  right: 2rem;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.img-overlay h4 {
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.img-overlay p {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  margin-bottom: 1rem;
+}
+
+/* ===== Form area ===== */
+.form-side {
+  padding: 3rem 3.5rem;
+  position: relative;
+}
+
+.form-side h3 {
+  font-weight: 700;
+}
+
+.form-side .small-text {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+/* icon in input-group */
+.input-group-text {
+  background: #fff;
+  border-right: 0;
+}
+
+/* send button */
+.btn-brand {
+  background: #000000;
+  border: none;
+  max-width: 190px;
+  font-weight: 600;
+}
+
+.btn-brand:hover {
+  background: #0b5ed7;
+}
+
+/* ===== Responsive tweaks ===== */
+@media (max-width: 767.98px) {
+  .contact-img {
+    min-height: 240px;
+  }
+
+  .form-side {
+    padding: 2rem 2rem;
+  }
+}
+.accordion-button:not(.collapsed) {
+  color: #333;
+  background-color: #e96f00;
+  box-shadow: none;
+}
+.accordion-body {
+  padding: 0.5rem 1.5rem 1.5rem;
+  color: #555;
+
 }
