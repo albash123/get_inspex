@@ -12,6 +12,7 @@
 <!-- Font Awesome -->
 <link rel="stylesheet" href="style.css">
 
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <!-- Bootstrap JS and Popper.js -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
@@ -27,7 +28,7 @@
         <div class="container">
             <a class="navbar-brand" href="#">
                 <i class="fas  me-2">
-                    <img class="logo_img" src="assets/logo .svg" alt="">
+                    <img class="logo_img" src="assets/loj.png" alt="">
 
                 </i>Getinspex
             </a>
@@ -919,6 +920,20 @@
 
 
     </section>
+    <!-- ==========  SCRIPTS  ========== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Set dynamic background images -->
+    <script>
+        document.querySelectorAll('.custom-feature-card').forEach(card => {
+            const bg = card.getAttribute('data-bg');
+            if (bg) card.style.setProperty('--bg-img', `url(${bg})`);
+        });
+    </script>
+
+    <!-- ScrollReveal CDN -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
 
     <!--Industry-->
     <section>
@@ -1011,7 +1026,7 @@
 
             <div class="row case-study-row">
                 <!-- Problem Section -->
-                <div class="col-md-4 mb-4 mb-md-0">
+                <div class="col-md-4 mb-4 mb-md-0 case-card">
                     <div class="section-header">PROBLEM</div>
                     <div class="section-content">
                         <ul>
@@ -1026,7 +1041,7 @@
                 </div>
 
                 <!-- Solution Section -->
-                <div class="col-md-4 mb-4 mb-md-0">
+                <div class="col-md-4 mb-4 mb-md-0 case-card">
                     <div class="section-header">SOLUTION</div>
                     <div class="section-content">
                         <ul>
@@ -1042,7 +1057,7 @@
                 </div>
 
                 <!-- Approach Section -->
-                <div class="col-md-4">
+                <div class="col-md-4 case-card">
                     <div class="section-header">APPROACH</div>
                     <div class="section-content">
                         <ul>
@@ -1062,16 +1077,15 @@
 
     </section>
 
-    <!--Gps Control System-->
+    <!-- ▸ GPS Control System ────────────────────────────────────── -->
     <section class="gps">
-
         <div class="circuit">
             <div class="container">
 
-
                 <div class="row hero-section align-items-center">
-                    <div class="col-lg-6">
-                        <p class="hero-title-gps">Gps Inetegrated system </p>
+                    <!-- LEFT column – text & bullets -->
+                    <div class="col-lg-6 gps-card"> <!-- ⬅ added gps-card -->
+                        <p class="hero-title-gps">GPS-Integrated System</p>
                         <p class="hero-text-gps">
                             Our GPS-integrated system ensures seamless task assignment and accurate tracking for
                             inspectors. With real-time GPS check-ins, Inspex allows you to confirm on-site presence and
@@ -1081,92 +1095,68 @@
 
                         <div class="features-list">
                             <div class="feature-item">
-                                <div class="feature-icon">
-                                    <i class="fas fa-location-arrow"></i> <!-- GPS Icon -->
-                                </div>
+                                <div class="feature-icon"><i class="fas fa-location-arrow"></i></div>
                                 <div>Track inspector location and task status in real-time.</div>
                             </div>
-
                             <div class="feature-item">
-                                <div class="feature-icon">
-                                    <i class="fas fa-cloud-upload-alt"></i> <!-- Offline Icon -->
-                                </div>
+                                <div class="feature-icon"><i class="fas fa-cloud-upload-alt"></i></div>
                                 <div>Inspectors can work offline, syncing once online.</div>
                             </div>
-
                             <div class="feature-item">
-                                <div class="feature-icon">
-                                    <i class="fas fa-lock"></i> <!-- Encryption Icon -->
-                                </div>
+                                <div class="feature-icon"><i class="fas fa-lock"></i></div>
                                 <div>All inspection data is securely encrypted.</div>
                             </div>
                         </div>
 
-
-                        <button class="btn download-btn">Download App</button>
+                        <a href="#" class="btn btn-download">Download App</a>
                     </div>
 
-                    <div class="col-lg-6">
+                    <!-- RIGHT column – phone mock-up video -->
+                    <div class="col-lg-6 d-none d-md-block gps-card"> <!-- ⬅ added gps-card -->
                         <div class="phone-mockup">
                             <video autoplay loop muted playsinline>
                                 <source src="assets/gps.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
+                                Your browser doesn’t support the video tag.
                             </video>
                         </div>
                     </div>
-
-
-
                 </div>
+
             </div>
         </div>
-
     </section>
+
+
     <!-- Management & Security (Split Layout, no pricing) -->
     <section class="ms-section " id="managementSecurity">
         <div class="container">
-            <div class="row flex-lg-nowrap">
+            <div class="row flex-lg-nowrap gap-5">
                 <!-- ── Left column: content ── -->
                 <div class="col-12 col-lg-7 pe-lg-5">
-                    <h2 class="text-white mb-2">Role Management&nbsp;&amp;&nbsp;Security</h2>
+                    <h2 class=" text-white mb-2">Role Management & Accessability control</h2>
                     <p class="lead text-white-50 mb-4">
                         Getinspex delivers granular access control and enterprise-grade protection.
                     </p>
 
-                    <!-- Feature cards -->
-                    <div class="row g-3">
-                        <div class="col-6 col-md-3">
-                            <div class="ms-card h-100">
-                                <h6>Super Admin</h6>
-                                <p>Approve roles, track activity, view insights.</p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <div class="ms-card h-100">
-                                <h6>Permissions</h6>
-                                <p>Managers &amp; inspectors see only what they need.</p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <div class="ms-card h-100">
-                                <h6>Encryption</h6>
-                                <p>AES-256 + 2FA secure every record.</p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <div class="ms-card h-100">
-                                <h6>Compliance</h6>
-                                <p>GDPR-ready with regular audits.</p>
-                            </div>
-                        </div>
-                    </div>
+
+                    <p class="role_text">
+                        Our access control system empowers administrators to define and manage permissions for managers
+                        and inspectors with precision. Admins can assign specific roles, limit visibility to certain
+                        sections or data, and control who can perform key actions such as editing reports or viewing
+                        sensitive insights. This role-based approach ensures that managers and inspectors only interact
+                        with the features necessary for their tasks, reducing risk, enhancing productivity, and
+                        maintaining a clear hierarchy of control within the platform.
+                    </p>
+
                 </div>
-                <div class="col-12 col-lg-5 mt-4 mt-lg-0 position-relative">
-                    <video class="w-100 rounded shadow d-none d-lg-block" autoplay muted loop playsinline>
-                        <source src="assets/role.mp4" type="video/mp4">
+                <div class="col-lg-5 mt-4 mt-lg-0 position-relative video_mobile-wrapper">
+                    <video class="w-75 rounded shadow d-lg-block video_mobile" autoplay muted loop playsinline>
+                        <source src="assets/mobile_view.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
+
                 </div>
+
 
             </div>
         </div>
@@ -1288,6 +1278,7 @@
             </div>
         </div>
     </section>
+
     <!--Testimonals-->
     <div class=" testimonial-section py-5" data-aos="fade-up">
         <div class="row container align-items-center">
@@ -1349,7 +1340,7 @@
 
         </div><!-- /row -->
     </div>
-    <!-- /container -->
+  
 
     <!-- Center the card in viewport -->
     <div class="d-flex justify-content-center align-items-center py-5">

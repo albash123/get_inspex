@@ -3,100 +3,229 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Contact – Lessco</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Repair Services</title>
 
-    <!-- Bootstrap 5.3 + Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <style>
-        /* ===== Card wrapper ===== */
-        .contact-card {
-            max-width: 920px;
-            /* overall width */
-            border-radius: 20px;
-            box-shadow: 0 16px 40px rgba(0, 0, 0, .15);
-            overflow: hidden;
-        }
+    <!-- Your revised stylesheet -->
+    <link rel="stylesheet" href="aboutus.css">
+    <link rel="stylesheet" href="style.css">
 
-        /* ===== Leafy side ===== */
-        .contact-img {
-            background:  url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGJsdXUlMjBpbWFnZXxlbnwwfHx8fDE2OTI3NTY5NzE&ixlib=rb-4.0.3&q=80&w=1080') no-repeat center center;
-            min-height: 100%;
-        }
 
-        .img-overlay {
-            position: absolute;
-            bottom: 2.5rem;
-            left: 2rem;
-            right: 2rem;
-            color: #fff;
-            text-shadow: 0 2px 6px rgba(0, 0, 0, .5);
-        }
-
-        .img-overlay h4 {
-            font-weight: 800;
-            letter-spacing: .5px;
-        }
-
-        .img-overlay p {
-            font-size: .85rem;
-            line-height: 1.45;
-            margin-bottom: 1rem;
-        }
-
-        /* ===== Form area ===== */
-        .form-side {
-            padding: 3rem 3.5rem;
-            position: relative;
-        }
-
-        .form-side h3 {
-            font-weight: 700;
-        }
-
-        .form-side .small-text {
-            font-size: .85rem;
-            color: #6c757d;
-        }
-
-        /* icon in input-group */
-        .input-group-text {
-            background: #fff;
-            border-right: 0;
-        }
-
-        /* send button */
-        .btn-brand {
-            background: #0d6efd;
-            border: none;
-            padding: .85rem 1.5rem;
-            font-weight: 600;
-        }
-
-        .btn-brand:hover {
-            background: #0b5ed7;
-        }
-
-        /* ===== Responsive tweaks ===== */
-        @media (max-width:767.98px) {
-            .contact-img {
-                min-height: 240px;
-            }
-
-            .form-side {
-                padding: 2rem 2rem;
-            }
-        }
-    </style>
 </head>
 
-<body class="bg-body-tertiary">
+<body>
 
-   <!-- /centering wrapper -->
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas  me-2">
+                    <img class="logo_img" src="assets/logo .svg" alt="">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+                </i>Getinspex
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Testimonial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">FAQ</a>
+                    </li>
+                </ul>
+                <a href="#" class="btn btn-download">Download App</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ▸ ABOUT ------------------------------------------------------------ -->
+    <section class="new_file-about-section py-5">
+        <div class="container">
+            <div class="row ">
+                <!-- Image column -->
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="new_file-about-image">
+                        <img src="assets/about us.jpg"
+                            alt="Professional worker installing electrical fixtures on wooden ceiling">
+                    </div>
+                </div>
+
+                <!-- Text column -->
+                <div class="col-lg-6">
+                    <h1 class="new_file-about-heading">About Us</h1>
+                    <p class="new_file-about-text">
+                        Getinspex is an innovative inspection management platform developed by Qanzak Global to
+                        streamline and modernize inspection processes. It helps businesses optimize workflows, ensure
+                        compliance, and reduce inefficiencies through features like real-time GPS tracking, digital
+                        checklists, and automated reporting. Designed to enhance accuracy and speed, Getinspex empowers
+                        teams to perform inspections smarter and faster. With seamless cloud integration and offline
+                        task management, the platform simplifies complex workflows while ensuring compliance with
+                        industry standards. Powered by Qanzak Global, Getinspex continues to evolve to meet the growing
+                        needs of businesses worldwide
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ▸ STORY ------------------------------------------------------------ -->
+    <section class="new_file-story-section">
+        <h5 class="new_file-small-heading">OUR STORY</h5>
+        <h1 class="new_file-main-heading">Revolutionizing Inspection Management for the Future</h1>
+
+        <div class="new_file-story-image">
+            <img src="assets/our_story.jpg" alt="Handyman installing kitchen cabinets with a drill">
+        </div>
+
+        <div class="new_file-story-content">
+            <p>
+                Getinspex is the result of a vision to transform the way businesses conduct inspections. Founded by a
+                team of innovators, Getinspex was created with a singular purpose: to streamline the inspection process,
+                enhance accuracy, and improve efficiency across industries. As we continue to grow, Getinspex remains
+                dedicated to its core values of innovation, compliance, and efficiency, ensuring that businesses can
+                perform inspections smarter, faster, and with greater ease.
+
+
+            </p>
+        </div>
+    </section>
+
+    <!-- ▸ WHY CHOOSE US ---------------------------------------------------- -->
+    <section class="new_file-why-choose-section">
+        <div class="container">
+            <div class="row">
+                <!-- Left column -->
+                <div class="col-lg-6">
+                    <h5 class="new_file-small-heading">WHY CHOOSE US</h5>
+                    <h2 class="new_file-main-heading">The Best Choice for Your Inspection Management</h2>
+
+                    <!-- Feature 1 -->
+                    <div class="new_file-feature-item">
+                        <div class="new_file-feature-icon">
+                            <i class="fas fa-users-cog"></i>
+                        </div>
+                        <div class="new_file-feature-content">
+                            <h3>Experienced Professionals</h3>
+                            <p>Our team consists of experts in inspection management, with a deep understanding of
+                                industry regulations and the latest technology trends to streamline your inspection
+                                process.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="new_file-feature-item">
+                        <div class="new_file-feature-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="new_file-feature-content">
+                            <h3>Seamless Task Management</h3>
+                            <p>With Getinspex, you can assign and monitor tasks in real-time, ensuring all inspections
+                                are completed on time, reducing delays, and improving efficiency.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="new_file-feature-item">
+                        <div class="new_file-feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="new_file-feature-content">
+                            <h3>Secure & Compliant</h3>
+                            <p>Getinspex ensures that all inspection data is securely stored and compliant with the
+                                latest regulations, giving you peace of mind that your business is always audit-ready.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right column -->
+                <div class="col-lg-6 new_file-right-column">
+                    <p class="new_file-intro-text">
+                        At Getinspex, we understand the importance of efficient and accurate inspections. That’s why
+                        we’ve created a platform that helps businesses manage inspections more effectively and in
+                        compliance with industry standards.
+                        Here's why Getinspex is the best choice for your inspection management needs:
+                    </p>
+
+                    <div class="new_file-image-container">
+                        <img src="assets/hy_choosus.jpg" alt="Inspection team using Getinspex app for task management">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Section -->
+    <footer class="footer-section bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <!-- About Us Column -->
+                <div class="col-md-4">
+                    <h5>About Inspex</h5>
+                    <p>Inspex is a cutting-edge inspection management app that helps you perform, track, and manage
+                        safety inspections efficiently. Designed for businesses of all sizes, our app simplifies
+                        inspections, improves safety compliance, and ensures real-time performance tracking.</p>
+                </div>
+
+                <!-- Quick Links Column -->
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#about" class="text-light">About Us</a></li>
+                        <li><a href="#features" class="text-light">Features</a></li>
+                        <li><a href="#pricing" class="text-light">Pricing</a></li>
+                        <li><a href="#contact" class="text-light">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info Column -->
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>Have questions? Reach out to us:</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-phone-alt"></i> +971507857279</li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:contact@inspex.com"
+                                class="text-light">info@getinspex.com</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Shams Sharjah Media City </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="text-light">
+
+            <!-- Social Media & Legal -->
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2025 Inspex. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <a href="#" class="text-light">Privacy Policy</a> | <a href="#" class="text-light">Terms of
+                        Service</a>
+                    <div class="social-links">
+                        <a href="#" class="text-light me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

@@ -24,7 +24,7 @@ body {
 }
 
 .nav-link {
-  color: var(--text-light) !important;
+  color: var(--primary-color) !important;
   margin: 0 1rem;
   font-weight: 500;
 }
@@ -55,6 +55,24 @@ body {
 
   position: relative;
   color: var(--primary-color) !important;
+}
+
+/* ─── Glowing line ─────────────────────────────────────────── */
+.main_sect-hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 6px; /* line thickness */
+  background: var(--primary-color);
+  border-radius: 2px; /* soften the corners */
+
+  /* increased glow */
+  box-shadow: 0 0 650px var(--primary-color), 0 0 60px var(--primary-color),
+    0 0 40px var(--primary-color), 0 0 20px var(--primary-color);
+
+  pointer-events: none; /* keep it non-interactive */
 }
 
 .main_sect-video-bg video {
@@ -668,11 +686,15 @@ ul.text-light li {
 }
 
 .hero-text-gps {
-  font-size: 1.1rem;
-  margin-bottom: 2.5rem;
-  opacity: 0.8;
-  max-width: 600px;
-  color: #e96f00;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #b1afaf;
+
+  padding: 16px 20px;
+  border-left: 4px solid #e96f00; /* Accent line for emphasis */
+  border-radius: 8px;
+  margin: 20px 0;
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.3);
 }
 
 .hero-text {
@@ -1607,14 +1629,15 @@ main {
   margin-bottom: 10px;
   border-radius: 0.5rem !important;
   overflow: hidden;
+
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .accordion-button {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #333;
-  background-color: #fff;
+  color: #dcd6d6;
+  background-color: #e96f00;
   box-shadow: none;
   padding: 1.25rem 1.5rem;
 }
@@ -1644,7 +1667,8 @@ main {
 
 .accordion-body {
   padding: 0.5rem 1.5rem 1.5rem;
-  color: #555;
+  background-color: #202020;
+  color: #fff;
 }
 
 .accordion-body p {
@@ -2270,35 +2294,38 @@ main {
 .gps {
   height: 100vh;
   background-color: #2a2929 !important;
-
   padding: 30px;
 }
 
-/* Medium screens and below */
+/* Screens up to 1440px */
+@media (max-width: 1440px) {
+  .gps {
+    padding: 25px;
+    height: auto; /* Optional: if full height is too much for small screens */
+  }
+}
+
+/* Screens up to 768px */
 @media (max-width: 768px) {
   .gps {
-    height: auto;
-    padding: 2rem 1rem; /* optional spacing */
+    padding: 20px;
+    height: auto; /* Optional: if full height is too much for small screens */
   }
 }
 
-/* Small screens */
-@media (max-width: 480px) {
+/* Screens up to 425px */
+@media (max-width: 425px) {
   .gps {
+    padding: 15px;
     height: auto;
-    padding: 1.5rem 1rem;
   }
 }
 
-/* Default: show the list */
-.features-list {
-  display: block; /* or flex/grid depending on your layout */
-}
-
-/* Hide on screens smaller than 786px */
-@media (max-width: 785px) {
-  .features-list {
-    display: none;
+/* Screens up to 320px */
+@media (max-width: 320px) {
+  .gps {
+    padding: 10px;
+    height: auto;
   }
 }
 
@@ -3517,13 +3544,93 @@ figcaption {
 .ms-section {
   background: var(--ms-bg);
   padding: 4rem 0;
-  height: 100vh;
+  height: 130vh;
 }
 
+/* Large tablets and below */
+@media (max-width: 1024px) {
+  .ms-section {
+    height: 100vh;
+  }
+}
+
+/* Tablets and below */
+@media (max-width: 768px) {
+  .ms-section {
+    height: auto;
+    padding: 3rem 0;
+  }
+}
+.video_mobile {
+  border-radius: 30px !important;
+  overflow: hidden; /* keeps the shadow tidy on rounded corners */
+  width: 500px;
+  padding: 20px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), 0 32px 64px rgba(0, 0, 0, 0.25),
+    0 48px 96px rgba(48, 47, 47, 0.2);
+}
+
+.video_mobile-wrapper {
+  position: relative;
+  display: inline-block;
+}
+.role_text {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #b1afaf;
+
+  padding: 16px 20px;
+  border-left: 4px solid #e96f00; /* Accent line for emphasis */
+  border-radius: 8px;
+  margin: 20px 0;
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 1.05);
+}
+
+.video_text {
+  position: absolute;
+  top: 20%;
+  right: 100px; /* Increase distance if it's overlapping */
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: right center;
+  white-space: nowrap;
+  font-size: 2rem;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  .ms-section {
+    height: auto;
+    padding: 2rem 0;
+  }
+}
 /* ===== Text ===== */
 .ms-section h2 {
-  color: #fff;
+  color: #e96f00 !important;
+  font-size: 3rem;
+  font-weight: 700;
 }
+#managementSecurity {
+  position: relative;
+  z-index: 0;
+}
+
+#managementSecurity::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px; /* height of the glow */
+  pointer-events: none;
+  background: #e96f00;
+  filter: blur(8px);
+  opacity: 0.8;
+  z-index: -1;
+}
+
 .ms-section .lead {
   color: #ddd;
 }
@@ -3819,73 +3926,30 @@ figcaption {
   background: #f2f2f2;
   border-color: #bbb;
 }
-/* ===== Bottom-edge rising black glow ===== */
+
 .testimonial-section {
-  position: relative; /* anchor pseudo-element */
-  overflow: hidden; /* keep the glow inside */
-}
-/* ————— Irregular rising black threads ————— */
-.testimonial-section {
-  position: relative; /* anchor pseudo-elements   */
-  overflow: hidden; /* keep wisps inside bounds */
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
 }
 
-/* bottom smoke */
 .testimonial-section::after {
   content: "";
   position: absolute;
+  top: 0;
   left: 0;
-  right: 0;
-  bottom: -80px; /* start below the edge */
-  height: 160px; /* depth of effect      */
-
-  /* tile fuzzy domes across the x-axis */
-  background: radial-gradient(
-      50% 50% at 50% 100%,
-      rgba(0, 0, 0, 0.9) 0%,
-      rgba(0, 0, 0, 0.6) 55%,
-      rgba(0, 0, 0, 0) 80%
-    )
-    0 0/120px 120px repeat-x;
-
-  filter: blur(18px); /* soften into wisps    */
-  animation: riseSmoke 8s linear infinite;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
-}
-
-/* slower, larger wave for extra depth */
-.testimonial-section::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -100px;
-  height: 200px;
-
+  z-index: -1;
   background: radial-gradient(
-      50% 50% at 50% 100%,
-      rgba(0, 0, 0, 1.75) 0%,
-      rgba(0, 0, 0, 0.45) 60%,
-      rgba(0, 0, 0, 0) 90%
-    )
-    60px 0/180px 180px repeat-x;
-
-  filter: blur(24px);
-  animation: riseSmokeSlow 12s linear infinite;
-  pointer-events: none;
+    ellipse at center,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
 }
 
-/* keyframes */
-@keyframes riseSmoke {
-  to {
-    transform: translateY(-90px);
-  }
-}
-@keyframes riseSmokeSlow {
-  to {
-    transform: translateY(-110px);
-  }
-}
+
 .contact-card {
   max-width: 1920px;
   /* overall width */
@@ -3897,7 +3961,7 @@ figcaption {
 
 /* ===== Leafy side ===== */
 .contact-img {
-  background: url("https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGJsdXUlMjBpbWFnZXxlbnwwfHx8fDE2OTI3NTY5NzE&ixlib=rb-4.0.3&q=80&w=1080")
+  background: url("https://cdni.iconscout.com/illustration/premium/thumb/contact-us-illustration-download-in-svg-png-gif-file-formats--call-logo-customer-service-support-onboarding-pack-business-illustrations-4849052.png")
     no-repeat center center;
   min-height: 100%;
 }
@@ -3945,14 +4009,16 @@ figcaption {
 
 /* send button */
 .btn-brand {
-  background: #000000;
+  background: #000000f7;
   border: none;
+  color: #e96f00;
   max-width: 190px;
   font-weight: 600;
 }
 
 .btn-brand:hover {
-  background: #0b5ed7;
+  background: #000000;
+  color: #fff;
 }
 
 /* ===== Responsive tweaks ===== */
@@ -3973,5 +4039,4 @@ figcaption {
 .accordion-body {
   padding: 0.5rem 1.5rem 1.5rem;
   color: #555;
-
 }

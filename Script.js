@@ -102,3 +102,132 @@ document.getElementById("nextTestimonial").addEventListener("click", () => {
   idx = (idx + 1) % testimonials.length;
   showTestimonial(idx);
 });
+/* one SR instance with common defaults */
+const sr = ScrollReveal({
+  distance: "40px",
+  duration: 650,
+  easing: "ease-out",
+  opacity: 0,
+  reset: true, // ⇦ animate again when you scroll back up
+});
+
+/* odd-numbered cards: slide in from the LEFT */
+sr.reveal(".custom-feature-card:nth-child(odd)", {
+  origin: "left",
+  interval: 100, // 100 ms stagger
+});
+
+/* even-numbered cards: slide in from the RIGHT */
+sr.reveal(".custom-feature-card:nth-child(even)", {
+  origin: "right",
+  interval: 100,
+});
+/* =====  CASE-STUDY SECTION  ===== */
+sr.reveal(".case-card:nth-child(odd)", {
+  // first & third column
+  origin: "left",
+  distance: "40px",
+  interval: 100,
+});
+sr.reveal(".case-card:nth-child(even)", {
+  // middle column
+  origin: "right",
+  distance: "40px",
+  interval: 100,
+});
+/* =====  GPS SECTION  ===== */
+sr.reveal(".gps-card:nth-child(odd)", {
+  // left column (text)
+  origin: "left",
+  distance: "60px", // a bit more slide for variety
+  interval: 80,
+});
+sr.reveal(".gps-card:nth-child(even)", {
+  // right column (video)
+  origin: "right",
+  distance: "60px",
+  interval: 80,
+});
+/* ── MANAGEMENT & SECURITY section ─────────────────────────── */
+/* left-hand text column */
+sr.reveal("#managementSecurity .col-lg-7", {
+  origin: "left",
+  distance: "60px",
+  duration: 650,
+  easing: "ease-out",
+  opacity: 0,
+  reset: true,
+});
+
+/* right-hand video column */
+sr.reveal("#managementSecurity .col-lg-5", {
+  origin: "right",
+  distance: "60px",
+  duration: 650,
+  easing: "ease-out",
+  opacity: 0,
+  reset: true,
+});
+sr.reveal(".faq-section .col-lg-5", {
+  origin: "left",
+  distance: "60px",
+});
+
+/* right column (accordion wrapper) */
+sr.reveal(".faq-section .col-lg-7", {
+  origin: "right",
+  distance: "60px",
+});
+
+/* each accordion item fades up one after another */
+sr.reveal("#faqAccordion .accordion-item", {
+  origin: "bottom",
+  distance: "40px",
+  interval: 100, // 100 ms stagger
+});
+sr.reveal(".testimonial-section .col-md-5", {
+  origin: "left",
+  distance: "60px",
+});
+
+/* right column – quote, avatar, name/title */
+sr.reveal(".testimonial-section .col-md-7", {
+  origin: "right",
+  distance: "60px",
+});
+
+/* optional: stagger inner elements for a nicer entrance */
+sr.reveal(
+  ".testimonial-section .quote-mark, \
+             .testimonial-section .testimonial-quote, \
+             .testimonial-section .avatar, \
+             .testimonial-section .person-name, \
+             .testimonial-section .person-title",
+  {
+    origin: "bottom",
+    distance: "30px",
+    interval: 80,
+  }
+);
+sr.reveal(".contact-card .contact-img", {
+  origin: "left",
+  distance: "60px",
+});
+
+/* right form pane (slides in from the right) */
+sr.reveal(".contact-card .form-side", {
+  origin: "right",
+  distance: "60px",
+});
+
+/* optional: cascade each input / textarea / button upward */
+sr.reveal(
+  ".contact-card .input-group, \
+             .contact-card textarea, \
+             .contact-card .btn-brand",
+  {
+    origin: "bottom",
+    distance: "30px",
+    interval: 80, // 80 ms stagger
+  }
+);
