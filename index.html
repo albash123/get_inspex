@@ -5,20 +5,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get-Inspex.com</title>
+<title>Get-Inspex</title>
 
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <!-- Font Awesome -->
 <link rel="stylesheet" href="style.css">
 
-
+<!-- SVG favicon (modern browsers) -->
+<link rel="icon" href="assets/loj.png" type="image/svg+xml">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <!-- Bootstrap JS and Popper.js -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
-<link rel="icon" href="assets/logo .svg" type="image/x-icon">
+
 
 </head>
 
@@ -27,10 +28,15 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <i class="fas  me-2">
-                    <img class="logo_img" src="assets/loj.png" alt="">
+                <div class=" headd d-flex justify-content-center align-items-baseline">
+                    <i class="fas  me-2">
+                        <img class="logo_img" src="assets/loj.png" alt="">
 
-                </i>Getinspex
+                    </i>
+                    <h1 class="main_h1_heading_getinspex">Getinspex</h1>
+                </div>
+
+
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,21 +45,23 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                        <a class="nav-link" href="#digitalized-inspection">Digitalized Inspection</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
+                        <a class="nav-link" href="#features">Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Testimonial</a>
+                        <a class="nav-link" href="#industry-solutions">Industry Solutions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">FAQ</a>
+                        <a class="nav-link" href="#contact">Contact us</a>
                     </li>
                 </ul>
                 <a href="#" class="btn btn-download">Download App</a>
             </div>
+
         </div>
+
     </nav>
 
     <!-- Hero Section -->
@@ -70,25 +78,30 @@
         <div class="main_sect-circuit-lines position-absolute top-0 start-0 w-100 h-100 z-0">
             <!-- Add dynamic SVG/JS animation here if needed -->
         </div>
+        <div class="d-flex justify-content-center align-items-center ">
 
+
+        </div>
         <!-- Main Content -->
         <div class="container  position-relative z-1 text-white">
             <div class="row align-items-center min-vh-100 ">
                 <div class="col-lg-6">
-                    <h1 class="main_sect-title fw-bold">Transforming Inspections for the Future</h1>
-                    <p class="main_sect-desc lead mb-4">
+                    <h1 class="main_sect-title fw-bold fade-in-up delay-1">Transforming Inspections for the Future</h1>
+                    <p class="main_sect-desc lead mb-4 fade-in-up delay-2 ">
                         "Inspex is a smart, all-in-one platform designed to simplify and optimize site inspections. With
                         features like real-time GPS tracking, digital checklists, and secure report submissions, Inspex
                         ensures your inspections are accurate, efficient, and fully compliant. Streamline your workflow
                         and take control of safety inspections — all from the palm of your hand."
                     </p>
-                    <a href="#" class="main_sect-btn btn btn-primary btn-lg px-4">Download App</a>
+                    <a href="#" class="main_sect-btn btn btn-primary btn-lg px-4 fade-in-up delay-3 ">Download App</a>
                 </div>
             </div>
         </div>
+
+
     </section>
     <!--How we digitalize inspections-->
-    <section class="sect_crds">
+    <section id="digitalized-inspection" class="sect_crds ">
         <!-- Background video -->
         <video class="bg-video" autoplay muted loop playsinline>
             <source src="assets/ward.mp4" type="video/mp4" />
@@ -552,7 +565,7 @@
     </section>
 
     <!-- Features section -->
-    <section class="key_features-section">
+    <section id="features" class="key_features-section">
 
         <div class="key_features-diagonal-line key_features-diagonal-line-1"></div>
         <div class="key_features-diagonal-line key_features-diagonal-line-2"></div>
@@ -560,7 +573,7 @@
         <div class="container">
             <div class="text-center mb-5">
 
-                <h2 class="key_features-title">Top Product Features</h2>
+                <h2 class="section-title">Top Product Features</h2>
                 <p class="key_features-subtitle">Discover standout features for enhanced performance. Streamline tasks,
                     embrace innovation effortlessly.</p>
             </div>
@@ -645,12 +658,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
-                <!-- Bootstrap JS + JavaScript to set backgrounds -->
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
                 <script>
                     document.querySelectorAll('.custom-feature-card').forEach(card => {
                         const bg = card.getAttribute('data-bg');
@@ -920,8 +927,7 @@
 
 
     </section>
-    <!-- ==========  SCRIPTS  ========== -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 
     <!-- Set dynamic background images -->
     <script>
@@ -935,14 +941,14 @@
     <script src="https://unpkg.com/scrollreveal"></script>
 
 
-    <!--Industry-->
-    <section>
+    <!--Industry specific solution-->
+    <section id="industry-solutions">
         <div class="slide-container">
             <!-- Left Section with Background Image and Title -->
             <div class="left-section">
                 <div class="left-overlay"></div>
                 <div class="left-content">
-                    <h1 class="slide-title">Industry<br>Specific<br>Solutions</h1>
+                    <h1 class="section-titles_inudstry">Industry<br>Specific<br>Solutions</h1>
                 </div>
             </div>
 
@@ -958,12 +964,9 @@
                         </div>
                         <div class="tab-text">
                             Simplify site inspections, reduce risks, and ensure compliance on job sites with real-time
-                            GPS
-                            tracking and digital checklists.
+                            GPS tracking and digital checklists.
                         </div>
                     </div>
-
-
 
                     <!-- Manufacturing -->
                     <div class="tab-item">
@@ -976,45 +979,42 @@
                         </div>
                     </div>
 
-                    <!-- Energy & Utilities -->
+                    <!-- Oil & Gas -->
                     <div class="tab-item">
                         <div class="tab-icon">
-                            <i class="fas fa-bolt"></i>
+                            <i class="fas fa-oil-can"></i>
                         </div>
                         <div class="tab-text">
-                            Track energy equipment and infrastructure inspections to stay compliant with industry
-                            standards,
-                            ensuring safety and continuity.
+                            Inspect pipelines, drilling rigs, and refineries to ensure safety, prevent leaks, and
+                            maintain environmental compliance.
                         </div>
                     </div>
 
-
-
-                    <!-- Transportation & Logistics -->
+                    <!-- Mechanical & Equipment -->
                     <div class="tab-item">
                         <div class="tab-icon">
-                            <i class="fas fa-truck-moving"></i>
+                            <i class="fas fa-cogs"></i>
                         </div>
                         <div class="tab-text">
-                            Inspect vehicles, depots, and routes to reduce downtime and meet regulatory requirements.
+                            Perform routine and preventive inspections on mechanical systems and heavy machinery to
+                            prevent breakdowns and extend service life.
                         </div>
                     </div>
 
-
-
-                    <!-- Government & Public Sector -->
+                    <!-- Dangerous Goods (DGSA) -->
                     <div class="tab-item">
                         <div class="tab-icon">
-                            <i class="fas fa-landmark"></i>
+                            <i class="fas fa-exclamation-triangle"></i>
                         </div>
                         <div class="tab-text">
-                            Support infrastructure and facility compliance with streamlined digital inspection
-                            workflows.
+                            Oversee handling and transport of hazardous materials, ensuring full compliance with DGSA
+                            regulations and safety protocols.
                         </div>
                     </div>
 
                 </div>
             </div>
+
         </div>
 
     </section>
@@ -1022,11 +1022,11 @@
     <!--Case study -->
     <section class="case">
         <div class="container-fluid case-study-container">
-            <h1 class="main-title">POSITIVE CHANGE</h1>
+            <h1 class="section-title">POSITIVE CHANGE</h1>
 
-            <div class="row case-study-row">
+            <div class="row case-study-row mt-5">
                 <!-- Problem Section -->
-                <div class="col-md-4 mb-4 mb-md-0 case-card">
+                <div class="col-md-4 mb-1 mb-md-0 case-card">
                     <div class="section-header">PROBLEM</div>
                     <div class="section-content">
                         <ul>
@@ -1041,7 +1041,7 @@
                 </div>
 
                 <!-- Solution Section -->
-                <div class="col-md-4 mb-4 mb-md-0 case-card">
+                <div class="col-md-4 mb-1 mb-md-0 case-card">
                     <div class="section-header">SOLUTION</div>
                     <div class="section-content">
                         <ul>
@@ -1127,13 +1127,13 @@
     </section>
 
 
-    <!-- Management & Security (Split Layout, no pricing) -->
+    <!-- Management & Security  -->
     <section class="ms-section " id="managementSecurity">
         <div class="container">
             <div class="row flex-lg-nowrap gap-5">
                 <!-- ── Left column: content ── -->
                 <div class="col-12 col-lg-7 pe-lg-5">
-                    <h2 class=" text-white mb-2">Role Management & Accessability control</h2>
+                    <h2 class=" text-white mb-2">Role Management & Accessibility Control</h2>
                     <p class="lead text-white-50 mb-4">
                         Getinspex delivers granular access control and enterprise-grade protection.
                     </p>
@@ -1171,7 +1171,7 @@
                 <!-- Left Column -->
                 <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-up">
                     <div class="faq-header">
-                        <h2 class="faq-title mb-4">Answers to Your Top Questions</h2>
+                        <h2 class=" section-title faq-title mb-4">Answers to Your Top Questions</h2>
                         <p class="faq-description">
                             Check out our frequently asked questions to learn more about our process, services, and what
                             to expect from using <strong>Getinspex</strong>.
@@ -1317,33 +1317,29 @@
             <!-- ───── Right: testimonial content ───── -->
             <div class="col-md-7">
                 <div class="ps-md-5">
-                    <span class="quote-mark">"</span>
 
                     <p id="testimonialQuote" class="testimonial-quote">
-                        Production Online has helped me become a better musician and
-                        producer than I ever thought possible.
+                        "Getinspex has transformed our inspection process, making task assignments seamless and
+                        real-time tracking effortless."
                     </p>
 
-                    <div class="d-flex align-items-center mt-4">
-                        <img id="testimonialAvatar"
-                            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-3h4bGa6PwAujLnUU5b5Zb55hNxS21P.png"
-                            alt="Kyle Weznick" class="avatar">
-                        <div class="ms-3">
-                            <p id="testimonialName" class="person-name">Kyle Weznick</p>
-                            <p id="testimonialTitle" class="person-title">
-                                Media Director, Turn Around Music Group
-                            </p>
-                        </div>
+                    <div class="mt-4">
+                        <p id="testimonialName" class="person-name">Kyle Weznick</p>
+                        <p id="testimonialTitle" class="person-title">
+                            Media Director, Turn Around Music Group
+                        </p>
                     </div>
+
                 </div>
             </div>
 
+
         </div><!-- /row -->
     </div>
-  
 
-    <!-- Center the card in viewport -->
-    <div class="d-flex justify-content-center align-items-center py-5">
+
+    <!-- Contact us -->
+    <div id="contact" class="d-flex justify-content-center align-items-center py-5">
 
         <div class="contact-card bg-white">
 
@@ -1354,8 +1350,12 @@
                     <div class="img-overlay">
                         <h4>Getinspex</h4>
                         <p>
-                            Lessco serves as a digital experience that fosters and strengthens emerging
-                            businesses and advancements across the various blockchain platforms.
+                        <p>
+                            Getinspex is an all-in-one digital platform that simplifies site inspections,
+                            accelerates task assignments with real-time GPS tracking, and ensures full compliance
+                            across diverse industries.
+                        </p>
+
                         </p>
                         <div class="d-flex gap-3 fs-5">
                             <a href="#" class="text-white"><i class="bi bi-twitter"></i></a>
@@ -1369,7 +1369,7 @@
                     <!-- close button -->
 
 
-                    <h3>Get in Touch</h3>
+                    <h2>Get in Touch</h2>
                     <p class="small-text mb-4">24/7 we will answer your questions and problems</p>
 
                     <form>
@@ -1403,7 +1403,7 @@
                             </div>
 
                             <div class="col-12">
-                                <textarea class="form-control" rows="4" placeholder="Describe your issue"></textarea>
+                                <textarea class="form-control" rows="4" placeholder="Your message here"></textarea>
                             </div>
                         </div>
 
@@ -1432,9 +1432,9 @@
                 <div class="col-md-4">
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#about" class="text-light">About Us</a></li>
+                        <li><a href="rg.html" class="text-light">About Us</a></li>
                         <li><a href="#features" class="text-light">Features</a></li>
-                        <li><a href="#pricing" class="text-light">Pricing</a></li>
+
                         <li><a href="#contact" class="text-light">Contact</a></li>
                     </ul>
                 </div>
@@ -1460,13 +1460,18 @@
                     <p>&copy; 2025 Inspex. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-md-right">
-                    <a href="#" class="text-light">Privacy Policy</a> | <a href="#" class="text-light">Terms of
-                        Service</a>
+
+
+                    <a href="privacy.html" class="text-light" target="_blank">Privacy Policy</a> |
+                    <a href="termof_use.html" class="text-light" target="_blank">Terms of Service</a>
+
+
                     <div class="social-links">
-                        <a href="#" class="text-light me-3"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-light me-3"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="text-light"><i class="fab fa-instagram"></i></a>
+
+                        <a href="https://www.linkedin.com/in/m-serene-qanzakglobal" class="text-light me-3"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/qanzakglobal/" class="text-light"><i
+                                class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>

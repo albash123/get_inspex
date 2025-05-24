@@ -43,31 +43,27 @@ document.addEventListener("DOMContentLoaded", function () {
 const testimonials = [
   {
     quote:
-      "Production Online has helped me become a better musician and producer than I ever thought possible.",
-    name: "Kyle Weznick",
-    title: "Media Director, Turn Around Music Group",
-    avatar:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-3h4bGa6PwAujLnUU5b5Zb55hNxS21P.png",
+      "Getinspex has streamlined our inspection process and made task assignments faster and more efficient.",
+    name: "John Doe",
+    title: "Operations Manager, XYZ Construction",
   },
   {
     quote:
-      "Their lessons are clear, practical, and instantly leveled-up my mixes.",
-    name: "Olivia Ramirez",
-    title: "Independent Producer",
-    avatar: "https://randomuser.me/api/portraits/women/65.jpg",
+      "The real-time GPS tracking has made it easy to monitor progress and ensure compliance across multiple sites.",
+    name: "Sarah Smith",
+    title: "Compliance Officer, ABC Manufacturing",
   },
   {
     quote:
-      "I landed two sync placements after applying what I learned last month!",
-    name: "James “Jimmy” Lee",
-    title: "Composer & Guitarist",
-    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+      "With Getinspex, we reduced inspection times by 30% and saved operational costs significantly.",
+    name: "Michael Johnson",
+    title: "Safety Manager, Delta Enterprises",
   },
   {
-    quote: "The community feedback alone is worth the subscription price.",
-    name: "Priya Shah",
-    title: "Singer-Songwriter",
-    avatar: "https://randomuser.me/api/portraits/women/48.jpg",
+    quote:
+      "The digital checklists and automated reports have made our inspections both more accurate and less time-consuming.",
+    name: "Emily Davis",
+    title: "Facility Manager, Omega Medical Center",
   },
 ];
 
@@ -77,7 +73,6 @@ let idx = 0;
 const quoteEl = document.getElementById("testimonialQuote");
 const nameEl = document.getElementById("testimonialName");
 const titleEl = document.getElementById("testimonialTitle");
-const avatarEl = document.getElementById("testimonialAvatar");
 
 /* Swap helper */
 function showTestimonial(i) {
@@ -87,8 +82,6 @@ function showTestimonial(i) {
     quoteEl.textContent = t.quote;
     nameEl.textContent = t.name;
     titleEl.textContent = t.title;
-    avatarEl.src = t.avatar;
-    avatarEl.alt = t.name;
     quoteEl.classList.remove("opacity-0");
   }, 150); /* sync with CSS transition */
 }
@@ -102,13 +95,14 @@ document.getElementById("nextTestimonial").addEventListener("click", () => {
   idx = (idx + 1) % testimonials.length;
   showTestimonial(idx);
 });
-/* one SR instance with common defaults */
+
+/* ScrollReveal setup (unchanged) */
 const sr = ScrollReveal({
   distance: "40px",
   duration: 650,
   easing: "ease-out",
   opacity: 0,
-  reset: true, // ⇦ animate again when you scroll back up
+  reset: true,
 });
 
 /* odd-numbered cards: slide in from the LEFT */
@@ -231,3 +225,18 @@ sr.reveal(
     interval: 80, // 80 ms stagger
   }
 );
+
+// in a <script> block at the bottom of <body>
+document.querySelectorAll(".reveal-on-scroll").forEach((el) => {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add("is-visible");
+        io.unobserve(e.target);
+      }
+    });
+  });
+  io.observe(el);
+});
+
+

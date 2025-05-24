@@ -15,6 +15,7 @@ body {
 
 .navbar {
   background-color: var(--dark-bg) !important;
+  align-items: stretch !important;
 }
 
 .navbar-brand {
@@ -31,7 +32,7 @@ body {
 
 .btn-download {
   background-color: transparent;
-  color: var(--text-light);
+  color: rgb(111, 111, 111);
   border: 2px solid var(--primary-color);
   border-radius: 30px;
   padding: 0.5rem 1.5rem;
@@ -100,7 +101,8 @@ body {
 }
 
 .main_sect-desc {
-  font-size: 1.125rem !important;
+  font-size: 1rem !important;
+  color: #888888 !important;
 }
 /* Mobile view: reduce font size */
 @media (max-width: 768px) {
@@ -114,7 +116,7 @@ body {
   padding: 12px 24px;
   font-size: 1rem;
   border-radius: 6px;
-  color: white;
+  color: white !important;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -143,7 +145,7 @@ body {
 }
 
 .logo_img {
-  width: 50px;
+  width: 40px;
   margin-bottom: 10px;
 }
 .hero p {
@@ -217,17 +219,56 @@ body {
   color: var(--dark-bg);
   font-size: 3rem;
 }
+.section-titles_inudstry {
+  font-size: 7.5rem !important;
+  font-weight: bold !important;
+  color: #ffffff !important;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+  .section-titles_inudstry {
+    font-size: 6rem !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .section-titles_inudstry {
+    font-size: 4.5rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-titles_inudstry {
+    font-size: 3rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-titles_inudstry {
+    font-size: 2rem !important;
+  }
+}
 
 .section-title {
   text-align: center;
-  font-size: 3.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
+  font-size: 3.5rem !important;
+  font-weight: bold !important;
+
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+
   color: #e96f00 !important;
+
+  /* white halo + multi-layer extrude */
+  text-shadow:
+    /* soft white glow */ 0 0 4px rgba(255, 255, 255, 0.7),
+    /* 3D extrusion layers */ 1px 1px 0 #d86400, 2px 2px 0 #c65700,
+    3px 3px 0 #b34a00, 4px 4px 0 #a03e00, 5px 5px 0 #8d3200;
 }
+
 /*  A.  ensure the section is a stacking context  */
 .sect_crds {
   position: relative;
@@ -1567,7 +1608,7 @@ main {
     padding: 0px;
     text-align: start;
     border-color: #0a3d3f !important;
-    height: 500px;
+    height: 700px;
     /* Add margin for smaller devices */
   }
 
@@ -3949,7 +3990,6 @@ figcaption {
   );
 }
 
-
 .contact-card {
   max-width: 1920px;
   /* overall width */
@@ -4040,3 +4080,83 @@ figcaption {
   padding: 0.5rem 1.5rem 1.5rem;
   color: #555;
 }
+.main_h1_heading_getinspext,
+h1 {
+  font-size: 1.6rem !important;
+  font-weight: 600;
+  color: #e96f00;
+  text-align: start;
+}
+
+.navbar,
+.navbar-expand-lg,
+.navbar .navbar-collapse,
+.navbar .navbar-toggler {
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+html {
+  scroll-behavior: smooth !important;
+}
+.nav-link,
+.btn-download,
+.main_sect-btn {
+  transition: all 0.3s ease;
+}
+.nav-link:hover {
+  color: #fff;
+  transform: translateY(-2px);
+}
+.main_sect-btn:hover {
+  transform: scale(1.05);
+}
+/* 1. Define the animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 2. Utility to apply it */
+.fade-in-up {
+  opacity: 10; /* start hidden */
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* 3. Staggering helpers */
+.delay-1 {
+  animation-delay: 0.3s;
+}
+.delay-2 {
+  animation-delay: 0.6s;
+}
+.delay-3 {
+  animation-delay: 0.9s;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 991; /* sit above page content */
+}
+body {
+  padding-top: 69px; /* push content down so it’s not hidden under the navbar */
+}
+/* semi-opaque white */
+nav.navbar {
+  background-color: rgba(0, 0, 0, 0.85) !important;
+}
+
+/* or solid blue, for example */
+/*
+nav.navbar {
+  background-color: #0056b3 !important;
+}
+*/
